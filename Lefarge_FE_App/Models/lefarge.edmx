@@ -1,0 +1,598 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="LeFarge_dbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Action_Plan">
+          <Key>
+            <PropertyRef Name="Action_Plan_ID" />
+          </Key>
+          <Property Name="Action_Plan_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Action_Plan" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Categories">
+          <Key>
+            <PropertyRef Name="Category_ID" />
+          </Key>
+          <Property Name="Category_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Category" Type="varchar" MaxLength="25" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Deficiencies">
+          <Key>
+            <PropertyRef Name="Deficiencies_ID" />
+          </Key>
+          <Property Name="Deficiencies_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Deficiency" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Equipment">
+          <Key>
+            <PropertyRef Name="Equipment_ID" />
+          </Key>
+          <Property Name="Equipment_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Unit_Number" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Description1" Type="varchar" MaxLength="50" />
+          <Property Name="Num_Of_Belts" Type="int" />
+          <Property Name="Belt_Type" Type="varchar" MaxLength="10" />
+          <Property Name="Plant_ID" Type="int" Nullable="false" />
+          <Property Name="Category_ID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Headings">
+          <Key>
+            <PropertyRef Name="Heading_ID" />
+          </Key>
+          <Property Name="Heading_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Heading" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Category_ID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Plants">
+          <Key>
+            <PropertyRef Name="Plant_ID" />
+          </Key>
+          <Property Name="Plant_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Plant_Name" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Address" Type="varchar" MaxLength="50" />
+          <Property Name="Phone_Num" Type="varchar" MaxLength="12" />
+          <Property Name="Postal_Code" Type="varchar" MaxLength="7" />
+          <Property Name="City" Type="varchar" MaxLength="15" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Potential_Action_Plans">
+          <Key>
+            <PropertyRef Name="Potential_Action_Plans_ID" />
+          </Key>
+          <Property Name="Potential_Action_Plans_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Potential_Action_Plan" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Category_ID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Potential_Deficiencies">
+          <Key>
+            <PropertyRef Name="Deficiencies_ID" />
+          </Key>
+          <Property Name="Deficiencies_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Deficiencies" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Category_ID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Questions">
+          <Key>
+            <PropertyRef Name="Question_ID" />
+          </Key>
+          <Property Name="Question_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Question" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="Category_ID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Results">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Response" Type="bit" Nullable="false" />
+          <Property Name="Date_Completed" Type="date" Nullable="false" />
+          <Property Name="Question_ID" Type="int" Nullable="false" />
+          <Property Name="Action_plan" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="deficiency/defect" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <Association Name="FK_Equipment_Plant_ID">
+          <End Role="Plants" Type="Self.Plants" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Equipment" Type="Self.Equipment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Plants">
+              <PropertyRef Name="Plant_ID" />
+            </Principal>
+            <Dependent Role="Equipment">
+              <PropertyRef Name="Plant_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Equipment_Category_ID">
+          <End Role="Categories" Type="Self.Categories" Multiplicity="1" />
+          <End Role="Equipment" Type="Self.Equipment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="Category_ID" />
+            </Principal>
+            <Dependent Role="Equipment">
+              <PropertyRef Name="Category_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Headings_0">
+          <End Role="Categories" Type="Self.Categories" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Headings" Type="Self.Headings" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="Category_ID" />
+            </Principal>
+            <Dependent Role="Headings">
+              <PropertyRef Name="Category_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Potential_Action_Plans_Category_ID">
+          <End Role="Categories" Type="Self.Categories" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Potential_Action_Plans" Type="Self.Potential_Action_Plans" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="Category_ID" />
+            </Principal>
+            <Dependent Role="Potential_Action_Plans">
+              <PropertyRef Name="Category_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Potential_Deficiencies_0">
+          <End Role="Categories" Type="Self.Categories" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Potential_Deficiencies" Type="Self.Potential_Deficiencies" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="Category_ID" />
+            </Principal>
+            <Dependent Role="Potential_Deficiencies">
+              <PropertyRef Name="Category_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Questions_0">
+          <End Role="Categories" Type="Self.Categories" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Questions" Type="Self.Questions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="Category_ID" />
+            </Principal>
+            <Dependent Role="Questions">
+              <PropertyRef Name="Category_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Results_0">
+          <End Role="Questions" Type="Self.Questions" Multiplicity="1" />
+          <End Role="Results" Type="Self.Results" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Questions">
+              <PropertyRef Name="Question_ID" />
+            </Principal>
+            <Dependent Role="Results">
+              <PropertyRef Name="Question_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="LeFarge_dbModelStoreContainer">
+          <EntitySet Name="Action_Plan" EntityType="Self.Action_Plan" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Categories" EntityType="Self.Categories" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Deficiencies" EntityType="Self.Deficiencies" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Equipment" EntityType="Self.Equipment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Headings" EntityType="Self.Headings" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Plants" EntityType="Self.Plants" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Potential_Action_Plans" EntityType="Self.Potential_Action_Plans" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Potential_Deficiencies" EntityType="Self.Potential_Deficiencies" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Questions" EntityType="Self.Questions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Results" EntityType="Self.Results" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Equipment_Plant_ID" Association="Self.FK_Equipment_Plant_ID">
+            <End Role="Plants" EntitySet="Plants" />
+            <End Role="Equipment" EntitySet="Equipment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Equipment_Category_ID" Association="Self.FK_Equipment_Category_ID">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="Equipment" EntitySet="Equipment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Headings_0" Association="Self.FK_Headings_0">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="Headings" EntitySet="Headings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Potential_Action_Plans_Category_ID" Association="Self.FK_Potential_Action_Plans_Category_ID">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="Potential_Action_Plans" EntitySet="Potential_Action_Plans" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Potential_Deficiencies_0" Association="Self.FK_Potential_Deficiencies_0">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="Potential_Deficiencies" EntitySet="Potential_Deficiencies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Questions_0" Association="Self.FK_Questions_0">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="Questions" EntitySet="Questions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Results_0" Association="Self.FK_Results_0">
+            <End Role="Questions" EntitySet="Questions" />
+            <End Role="Results" EntitySet="Results" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="LeFarge_dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Action_Plan">
+          <Key>
+            <PropertyRef Name="Action_Plan_ID" />
+          </Key>
+          <Property Name="Action_Plan_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Action_Plan1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="Category_ID" />
+          </Key>
+          <Property Name="Category_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Category1" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Equipments" Relationship="Self.FK_Equipment_Category_ID" FromRole="Categories" ToRole="Equipment" />
+          <NavigationProperty Name="Headings" Relationship="Self.FK_Headings_0" FromRole="Categories" ToRole="Headings" />
+          <NavigationProperty Name="Potential_Action_Plans" Relationship="Self.FK_Potential_Action_Plans_Category_ID" FromRole="Categories" ToRole="Potential_Action_Plans" />
+          <NavigationProperty Name="Potential_Deficiencies" Relationship="Self.FK_Potential_Deficiencies_0" FromRole="Categories" ToRole="Potential_Deficiencies" />
+          <NavigationProperty Name="Questions" Relationship="Self.FK_Questions_0" FromRole="Categories" ToRole="Questions" />
+        </EntityType>
+        <EntityType Name="Deficiency">
+          <Key>
+            <PropertyRef Name="Deficiencies_ID" />
+          </Key>
+          <Property Name="Deficiencies_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Deficiency1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Equipment">
+          <Key>
+            <PropertyRef Name="Equipment_ID" />
+          </Key>
+          <Property Name="Equipment_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Unit_Number" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Description1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Num_Of_Belts" Type="Int32" />
+          <Property Name="Belt_Type" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Plant_ID" Type="Int32" Nullable="false" />
+          <Property Name="Category_ID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Category" Relationship="Self.FK_Equipment_Category_ID" FromRole="Equipment" ToRole="Categories" />
+          <NavigationProperty Name="Plant" Relationship="Self.FK_Equipment_Plant_ID" FromRole="Equipment" ToRole="Plants" />
+        </EntityType>
+        <EntityType Name="Heading">
+          <Key>
+            <PropertyRef Name="Heading_ID" />
+          </Key>
+          <Property Name="Heading_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Heading1" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Category_ID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Category" Relationship="Self.FK_Headings_0" FromRole="Headings" ToRole="Categories" />
+        </EntityType>
+        <EntityType Name="Plant">
+          <Key>
+            <PropertyRef Name="Plant_ID" />
+          </Key>
+          <Property Name="Plant_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Plant_Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Phone_Num" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="Postal_Code" Type="String" MaxLength="7" FixedLength="false" Unicode="false" />
+          <Property Name="City" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Equipments" Relationship="Self.FK_Equipment_Plant_ID" FromRole="Plants" ToRole="Equipment" />
+        </EntityType>
+        <EntityType Name="Potential_Action_Plans">
+          <Key>
+            <PropertyRef Name="Potential_Action_Plans_ID" />
+          </Key>
+          <Property Name="Potential_Action_Plans_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Potential_Action_Plan" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Category_ID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Category" Relationship="Self.FK_Potential_Action_Plans_Category_ID" FromRole="Potential_Action_Plans" ToRole="Categories" />
+        </EntityType>
+        <EntityType Name="Potential_Deficiencies">
+          <Key>
+            <PropertyRef Name="Deficiencies_ID" />
+          </Key>
+          <Property Name="Deficiencies_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Deficiencies" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Category_ID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Category" Relationship="Self.FK_Potential_Deficiencies_0" FromRole="Potential_Deficiencies" ToRole="Categories" />
+        </EntityType>
+        <EntityType Name="Question">
+          <Key>
+            <PropertyRef Name="Question_ID" />
+          </Key>
+          <Property Name="Question_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Question1" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Category_ID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Category" Relationship="Self.FK_Questions_0" FromRole="Questions" ToRole="Categories" />
+          <NavigationProperty Name="Results" Relationship="Self.FK_Results_0" FromRole="Questions" ToRole="Results" />
+        </EntityType>
+        <EntityType Name="Result">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Response" Type="Boolean" Nullable="false" />
+          <Property Name="Date_Completed" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Question_ID" Type="Int32" Nullable="false" />
+          <Property Name="Action_plan" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="deficiency_defect" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Question" Relationship="Self.FK_Results_0" FromRole="Results" ToRole="Questions" />
+        </EntityType>
+        <Association Name="FK_Equipment_Category_ID">
+          <End Role="Categories" Type="Self.Category" Multiplicity="1" />
+          <End Role="Equipment" Type="Self.Equipment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="Category_ID" />
+            </Principal>
+            <Dependent Role="Equipment">
+              <PropertyRef Name="Category_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Headings_0">
+          <End Role="Categories" Type="Self.Category" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Headings" Type="Self.Heading" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="Category_ID" />
+            </Principal>
+            <Dependent Role="Headings">
+              <PropertyRef Name="Category_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Potential_Action_Plans_Category_ID">
+          <End Role="Categories" Type="Self.Category" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Potential_Action_Plans" Type="Self.Potential_Action_Plans" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="Category_ID" />
+            </Principal>
+            <Dependent Role="Potential_Action_Plans">
+              <PropertyRef Name="Category_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Potential_Deficiencies_0">
+          <End Role="Categories" Type="Self.Category" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Potential_Deficiencies" Type="Self.Potential_Deficiencies" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="Category_ID" />
+            </Principal>
+            <Dependent Role="Potential_Deficiencies">
+              <PropertyRef Name="Category_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Questions_0">
+          <End Role="Categories" Type="Self.Category" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Questions" Type="Self.Question" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="Category_ID" />
+            </Principal>
+            <Dependent Role="Questions">
+              <PropertyRef Name="Category_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Equipment_Plant_ID">
+          <End Role="Plants" Type="Self.Plant" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Equipment" Type="Self.Equipment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Plants">
+              <PropertyRef Name="Plant_ID" />
+            </Principal>
+            <Dependent Role="Equipment">
+              <PropertyRef Name="Plant_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Results_0">
+          <End Role="Questions" Type="Self.Question" Multiplicity="1" />
+          <End Role="Results" Type="Self.Result" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Questions">
+              <PropertyRef Name="Question_ID" />
+            </Principal>
+            <Dependent Role="Results">
+              <PropertyRef Name="Question_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DefaultConnection" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Action_Plan" EntityType="Self.Action_Plan" />
+          <EntitySet Name="Categories" EntityType="Self.Category" />
+          <EntitySet Name="Deficiencies" EntityType="Self.Deficiency" />
+          <EntitySet Name="Equipments" EntityType="Self.Equipment" />
+          <EntitySet Name="Headings" EntityType="Self.Heading" />
+          <EntitySet Name="Plants" EntityType="Self.Plant" />
+          <EntitySet Name="Potential_Action_Plans" EntityType="Self.Potential_Action_Plans" />
+          <EntitySet Name="Potential_Deficiencies" EntityType="Self.Potential_Deficiencies" />
+          <EntitySet Name="Questions" EntityType="Self.Question" />
+          <EntitySet Name="Results" EntityType="Self.Result" />
+          <AssociationSet Name="FK_Equipment_Category_ID" Association="Self.FK_Equipment_Category_ID">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="Equipment" EntitySet="Equipments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Headings_0" Association="Self.FK_Headings_0">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="Headings" EntitySet="Headings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Potential_Action_Plans_Category_ID" Association="Self.FK_Potential_Action_Plans_Category_ID">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="Potential_Action_Plans" EntitySet="Potential_Action_Plans" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Potential_Deficiencies_0" Association="Self.FK_Potential_Deficiencies_0">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="Potential_Deficiencies" EntitySet="Potential_Deficiencies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Questions_0" Association="Self.FK_Questions_0">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="Questions" EntitySet="Questions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Equipment_Plant_ID" Association="Self.FK_Equipment_Plant_ID">
+            <End Role="Plants" EntitySet="Plants" />
+            <End Role="Equipment" EntitySet="Equipments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Results_0" Association="Self.FK_Results_0">
+            <End Role="Questions" EntitySet="Questions" />
+            <End Role="Results" EntitySet="Results" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="LeFarge_dbModelStoreContainer" CdmEntityContainer="DefaultConnection">
+          <EntitySetMapping Name="Action_Plan">
+            <EntityTypeMapping TypeName="LeFarge_dbModel.Action_Plan">
+              <MappingFragment StoreEntitySet="Action_Plan">
+                <ScalarProperty Name="Action_Plan_ID" ColumnName="Action_Plan_ID" />
+                <ScalarProperty Name="Action_Plan1" ColumnName="Action_Plan" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Categories">
+            <EntityTypeMapping TypeName="LeFarge_dbModel.Category">
+              <MappingFragment StoreEntitySet="Categories">
+                <ScalarProperty Name="Category_ID" ColumnName="Category_ID" />
+                <ScalarProperty Name="Category1" ColumnName="Category" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Deficiencies">
+            <EntityTypeMapping TypeName="LeFarge_dbModel.Deficiency">
+              <MappingFragment StoreEntitySet="Deficiencies">
+                <ScalarProperty Name="Deficiencies_ID" ColumnName="Deficiencies_ID" />
+                <ScalarProperty Name="Deficiency1" ColumnName="Deficiency" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Equipments">
+            <EntityTypeMapping TypeName="LeFarge_dbModel.Equipment">
+              <MappingFragment StoreEntitySet="Equipment">
+                <ScalarProperty Name="Equipment_ID" ColumnName="Equipment_ID" />
+                <ScalarProperty Name="Unit_Number" ColumnName="Unit_Number" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description1" ColumnName="Description1" />
+                <ScalarProperty Name="Num_Of_Belts" ColumnName="Num_Of_Belts" />
+                <ScalarProperty Name="Belt_Type" ColumnName="Belt_Type" />
+                <ScalarProperty Name="Plant_ID" ColumnName="Plant_ID" />
+                <ScalarProperty Name="Category_ID" ColumnName="Category_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Headings">
+            <EntityTypeMapping TypeName="LeFarge_dbModel.Heading">
+              <MappingFragment StoreEntitySet="Headings">
+                <ScalarProperty Name="Heading_ID" ColumnName="Heading_ID" />
+                <ScalarProperty Name="Heading1" ColumnName="Heading" />
+                <ScalarProperty Name="Category_ID" ColumnName="Category_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Plants">
+            <EntityTypeMapping TypeName="LeFarge_dbModel.Plant">
+              <MappingFragment StoreEntitySet="Plants">
+                <ScalarProperty Name="Plant_ID" ColumnName="Plant_ID" />
+                <ScalarProperty Name="Plant_Name" ColumnName="Plant_Name" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Phone_Num" ColumnName="Phone_Num" />
+                <ScalarProperty Name="Postal_Code" ColumnName="Postal_Code" />
+                <ScalarProperty Name="City" ColumnName="City" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Potential_Action_Plans">
+            <EntityTypeMapping TypeName="LeFarge_dbModel.Potential_Action_Plans">
+              <MappingFragment StoreEntitySet="Potential_Action_Plans">
+                <ScalarProperty Name="Potential_Action_Plans_ID" ColumnName="Potential_Action_Plans_ID" />
+                <ScalarProperty Name="Potential_Action_Plan" ColumnName="Potential_Action_Plan" />
+                <ScalarProperty Name="Category_ID" ColumnName="Category_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Potential_Deficiencies">
+            <EntityTypeMapping TypeName="LeFarge_dbModel.Potential_Deficiencies">
+              <MappingFragment StoreEntitySet="Potential_Deficiencies">
+                <ScalarProperty Name="Deficiencies_ID" ColumnName="Deficiencies_ID" />
+                <ScalarProperty Name="Deficiencies" ColumnName="Deficiencies" />
+                <ScalarProperty Name="Category_ID" ColumnName="Category_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Questions">
+            <EntityTypeMapping TypeName="LeFarge_dbModel.Question">
+              <MappingFragment StoreEntitySet="Questions">
+                <ScalarProperty Name="Question_ID" ColumnName="Question_ID" />
+                <ScalarProperty Name="Question1" ColumnName="Question" />
+                <ScalarProperty Name="Category_ID" ColumnName="Category_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Results">
+            <EntityTypeMapping TypeName="LeFarge_dbModel.Result">
+              <MappingFragment StoreEntitySet="Results">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Response" ColumnName="Response" />
+                <ScalarProperty Name="Date_Completed" ColumnName="Date_Completed" />
+                <ScalarProperty Name="Question_ID" ColumnName="Question_ID" />
+                <ScalarProperty Name="Action_plan" ColumnName="Action_plan" />
+                <ScalarProperty Name="deficiency_defect" ColumnName="deficiency/defect" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
