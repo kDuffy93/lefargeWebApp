@@ -41,9 +41,10 @@ namespace Lefarge_FE_App
         }
 
 
-        protected void btnSave_Click(object sender, EventArgs e)
-        {
+       
 
+        protected void btnSave_OnClick(object sender, EventArgs e)
+        {
             //connect
             using (DefaultConnection conn = new DefaultConnection())
             {
@@ -55,10 +56,10 @@ namespace Lefarge_FE_App
                 {
                     Int32 CategoryID = Convert.ToInt32(Request.QueryString["Category_ID"]);
 
-                     c = (from category in conn.Categories
-                           where category.Category_ID == CategoryID
-                           select category).FirstOrDefault();
-                    
+                    c = (from category in conn.Categories
+                         where category.Category_ID == CategoryID
+                         select category).FirstOrDefault();
+
                 }
 
                 //fill the properties of our object from the form inputs
@@ -76,7 +77,6 @@ namespace Lefarge_FE_App
                 //redirect to updated departments page
                 Response.Redirect("categories.aspx");
             }
-
 
         }
     }

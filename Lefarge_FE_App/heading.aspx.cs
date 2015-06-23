@@ -19,9 +19,11 @@ namespace Lefarge_FE_App
                 {
                     //we have a url parameter if the count is > 0 so populate the form
                     GetHeading();
-                    fillDropDown();
+                    
                 }
+                
             }
+            fillDropDown();
         }
 
         protected void GetHeading()
@@ -38,6 +40,8 @@ namespace Lefarge_FE_App
 
                 //populate the form from our department object
                 txtHeading.Text = c.Heading1;
+                ddlCategory.SelectedIndex = c.Category_ID;
+
             }
         }
 
@@ -46,17 +50,21 @@ namespace Lefarge_FE_App
             using (DefaultConnection conn = new DefaultConnection())
             {
                 var c = (from cat in conn.Categories
-                    where cat.Category1 != null 
-                select cat).FirstOrDefault();
+                   
+                select cat).ToList();
+                ddlCategory.DataSource = c;
+                ddlCategory.DataBind();
 
-              
+
+
             }
         }
 
 
-        protected void btnSave_Click(object sender, EventArgs e)
-        {
+       
 
+        protected void btnSave_OnClick(object sender, EventArgs e)
+        {
             //connect
             using (DefaultConnection conn = new DefaultConnection())
             {
@@ -78,6 +86,7 @@ namespace Lefarge_FE_App
 
 
                 c.Heading1 = txtHeading.Text;
+                c.Category_ID = Convert.ToInt32(ddlCategory.SelectedValue);
 
                 if (Request.QueryString.Count == 0)
                 {
@@ -89,7 +98,6 @@ namespace Lefarge_FE_App
                 //redirect to updated departments page
                 Response.Redirect("Headings.aspx");
             }
-
 
         }
     }

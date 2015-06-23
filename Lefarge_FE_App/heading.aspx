@@ -12,12 +12,12 @@
     
      <div class="form-group">
         
-<label class="col-sm-3">Category:</label>
-        <asp:DropDownList DataValueField="Category_ID" DataTextField="Category1" ID="ddlCategory" runat="server" required="true" />
+<label for="ddlCategory" class="col-sm-3">Category:</label>
+        <asp:DropDownList  runat="server" ID="ddlCategory" DataValueField="Category_ID" DataTextField="Category1"/>
     </div>
     
     <div class="col-sm-offset-3">
-        <asp:Button ID="btnSave" runat="server" Text="Save" CssClass="btn btn-primary"
+        <asp:Button ID="btnSave" runat="server" Text="Save" OnClick="btnSave_OnClick" CssClass="btn btn-primary"
              />
     </div>
 </asp:Content>

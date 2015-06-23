@@ -4,12 +4,19 @@
     <div class="well">
         <div>
         <asp:Label runat="server">Selected Plant:</asp:Label>
-        <asp:TextBox ID="txtPlant" runat="server" Enabled="false"></asp:TextBox>
+        <asp:TextBox ID="txtPlant" runat="server" Enabled="false" Text="0"></asp:TextBox>
             </div>
         <div>
         <asp:Label runat="server">Selected Category</asp:Label>
-        <asp:TextBox ID="txtCategory" runat="server" Enabled="false"></asp:TextBox>
+        <asp:TextBox ID="txtCategory" runat="server" Enabled="false" Text="0"></asp:TextBox>
             </div>
         </div>
+        
+       
+            <div>
+              <asp:Panel ID="pnlButtons" runat="server" on></asp:Panel>
+               
+            </div>
+        
      
 </asp:Content>

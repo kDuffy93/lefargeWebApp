@@ -40,11 +40,11 @@ namespace Lefarge_FE_App
                 //populate the form from our department object
                 txtName.Text = e.Name;
                 txtBeltType.Text = e.Belt_Type;
-                txtBeltType.Text = e.Num_Of_Belts.ToString();
+                txtNumOfBelts.Text = e.Num_Of_Belts.ToString();
                 txtUnitNumber.Text = e.Unit_Number.ToString();
                 txtDescription1.Text = e.Description1;
-                ddlPlant.SelectedIndex = e.Plant_ID;
-                ddlCategory.SelectedIndex = e.Category_ID;
+                ddlPlant.SelectedIndex = ((e.Plant_ID) - 1);
+                ddlCategory.SelectedIndex = ((e.Category_ID)-1);
 
             }
         }

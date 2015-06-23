@@ -10,7 +10,7 @@
 namespace Lefarge_FE_App {
     
     
-    public partial class survey {
+    public partial class survey1 {
         
         /// <summary>
         /// txtPlant control.
@@ -31,12 +31,12 @@ namespace Lefarge_FE_App {
         protected global::System.Web.UI.WebControls.TextBox txtCategory;
         
         /// <summary>
-        /// pnlButtons control.
+        /// txtEquipment control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlButtons;
+        protected global::System.Web.UI.WebControls.TextBox txtEquipment;
     }
 }

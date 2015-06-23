@@ -48,8 +48,8 @@ fillDropDowns();
 
         protected void btnSubmit_OnClick(object sender, EventArgs e)
         {
-            Session["selectedPlant"] = ddlPlant.SelectedItem.Text;
-            Session["selectedCategory"] = ddlCategory.SelectedItem.Text;
+            Session["selectedPlant"] = ddlPlant.SelectedItem.Value;
+            Session["selectedCategory"] = ddlCategory.SelectedItem.Value;
             Response.Redirect("selectEquipment.aspx");
         }
     }
