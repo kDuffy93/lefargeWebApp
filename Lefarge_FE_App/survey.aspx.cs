@@ -7,12 +7,20 @@ using System.Web.UI.WebControls;
 
 namespace Lefarge_FE_App
 {
+
     public partial class survey1 : System.Web.UI.Page
     {
+        public int selectedCategory { get; set; }
+
+        public int selectedPlant { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
+
+          
             fillSelections();
         }
+
+        
         private void fillSelections()
         {
             var plant = Session["selectedPlant"];
@@ -23,5 +31,7 @@ namespace Lefarge_FE_App
             txtPlant.Text = plant.ToString();
             txtEquipment.Text = equipment;
         }
+
+        
     }
 }

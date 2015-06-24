@@ -11,6 +11,7 @@ namespace Lefarge_FE_App
 {
     public partial class survey : System.Web.UI.Page
     {
+       
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -20,7 +21,9 @@ namespace Lefarge_FE_App
                     //we have a url parameter if the count is > 0 so populate the form
 
 
+                
                 }
+               
                 fillSelections();
                 fillBtnPnl();
             }
