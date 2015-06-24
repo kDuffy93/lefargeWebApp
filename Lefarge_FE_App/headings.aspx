@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Lefarge.Master" AutoEventWireup="true" CodeBehind="headings.aspx.cs" Inherits="Lefarge_FE_App.headings" %>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <h1>Categories</h1>
+    <h1>Heading</h1>
 
     <a rel="external" href="heading.aspx">Add New Heading</a>
 

@@ -4,7 +4,7 @@
     <h1>Heading</h1>
     
     <h5>Add a heading to a category</h5>
-    
+    <h2>Both Required</h2>
     <div class="form-group">
         <label for="txtHeading" class="col-sm-3">Heading:</label>
         <asp:TextBox ID="txtHeading" runat="server" required="true" MaxLength="30" />
