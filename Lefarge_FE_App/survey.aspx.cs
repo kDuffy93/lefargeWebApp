@@ -17,11 +17,11 @@ namespace Lefarge_FE_App
         {
             var plant = Session["selectedPlant"];
             var category = Session["selectedCategory"];
-            var equipment = Session["selectedEquipment"];
+            var equipment = Request.QueryString["selectedEquipment"].ToString();
             // Write the modified stock picks list back to session state.
             txtCategory.Text = category.ToString();
             txtPlant.Text = plant.ToString();
-            txtEquipment.Text = equipment.ToString();
+            txtEquipment.Text = equipment;
         }
     }
 }

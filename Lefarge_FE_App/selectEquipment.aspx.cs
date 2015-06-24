@@ -50,13 +50,13 @@ namespace Lefarge_FE_App
                
                     for (int i = 0; i < b.Count; i++)
                     {
-                        var eventName = ("btn") + b[i].Unit_Number + ("_Click");
-                        Button equipmentButton = new Button();
+                       
+                        HyperLink equipmentButton = new HyperLink();
                         equipmentButton.Text = b[i].Name;
-                        equipmentButton.ID = b[i].Unit_Number.ToString();
-                        equipmentButton.Click += new EventHandler(this.equipmentButton_Click);
-
+                        equipmentButton.CssClass = "btn btn-primary";
+                        equipmentButton.NavigateUrl = "survey.aspx?selectedEquipment=" + b[i].Unit_Number;
                         pnlButtons.Controls.Add(equipmentButton);
+
                     }
                 
 

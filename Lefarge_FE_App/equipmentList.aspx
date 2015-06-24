@@ -13,6 +13,7 @@
             <asp:BoundField DataField="Name" HeaderText="Name"/>
             <asp:BoundField DataField="Description1" HeaderText="Description"/>
             <asp:BoundField DataField="Num_Of_Belts" HeaderText="Number Of Belts"/>
+            <asp:BoundField DataField="Belt_Type" HeaderText="Belt Type"/>
             <asp:BoundField DataField="Category_ID" HeaderText="Category"/>
             <asp:BoundField   DataField="Plant_ID"  HeaderText="Plant"/>
             <asp:HyperLinkField HeaderText="Edit" NavigateUrl="plant.aspx" 

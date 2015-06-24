@@ -2,7 +2,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <h1>Equipment Details</h1>
 
-    <h5>Plant Name and City are Required</h5>
+    <h5>Unit number,Name, are Required</h5>
      <h5>All other fields are optional</h5>
 
     <div class="form-group">
