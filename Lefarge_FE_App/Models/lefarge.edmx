@@ -81,6 +81,7 @@
           <Property Name="Question_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Question" Type="nvarchar" MaxLength="250" Nullable="false" />
           <Property Name="Category_ID" Type="int" Nullable="false" />
+          <Property Name="Headings_Under" Type="varchar(max)" />
         </EntityType>
         <EntityType Name="Results">
           <Key>
@@ -320,6 +321,7 @@
           <Property Name="Category_ID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Category" Relationship="Self.FK_Questions_0" FromRole="Questions" ToRole="Categories" />
           <NavigationProperty Name="Results" Relationship="Self.FK_Results_0" FromRole="Questions" ToRole="Results" />
+          <Property Name="Headings_Under" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Result">
           <Key>
@@ -553,6 +555,7 @@
           <EntitySetMapping Name="Questions">
             <EntityTypeMapping TypeName="LeFarge_dbModel.Question">
               <MappingFragment StoreEntitySet="Questions">
+                <ScalarProperty Name="Headings_Under" ColumnName="Headings_Under" />
                 <ScalarProperty Name="Question_ID" ColumnName="Question_ID" />
                 <ScalarProperty Name="Question1" ColumnName="Question" />
                 <ScalarProperty Name="Category_ID" ColumnName="Category_ID" />
