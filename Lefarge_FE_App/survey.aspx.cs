@@ -97,7 +97,7 @@ namespace Lefarge_FE_App
                     Panel panel = new Panel();
                     RadioButtonList resp = new RadioButtonList();
 
-                    resp.RepeatDirection = 0; resp.resp.AutoPostBack = true; resp.SelectedIndexChanged += new EventHandler(rbl_SelectedIndexChanged);
+                    resp.RepeatDirection = 0; resp.AutoPostBack = true; resp.SelectedIndexChanged += new EventHandler(rbl_SelectedIndexChanged);
                 ListItem answer = new ListItem();
                     for (int w = 0; w < 2; w++)
                     {
