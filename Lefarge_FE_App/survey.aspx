@@ -31,7 +31,7 @@
             <asp:TableRow runat="server">
                  <asp:TableCell>test Row (THIS IS NOT GENERATEd FROM A DATABASE ITS HARD CODED</asp:TableCell>
                 <asp:TableCell runat="server">
-               <asp:RadioButtonList ID="rbl1" RepeatDirection="Horizontal" AutoPostBack="True" runat="server">
+               <asp:RadioButtonList ID="rbl1" RepeatDirection="Horizontal" AutoPostBack="True" runat="server" OnSelectedIndexChanged="rbl_SelectedIndexChanged">
                     <asp:ListItem Value="yes" Text="Yes"></asp:ListItem>
                     <asp:ListItem Value="no" Text="No"></asp:ListItem>
                    </asp:RadioButtonList>

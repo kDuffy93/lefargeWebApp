@@ -50,7 +50,8 @@ namespace Lefarge_FE_App
                 for (int i = 0; i < neededHeadings.Count; i++)
                 {
                     TableHeaderRow r = new TableHeaderRow();
-                    r.BackColor = Color.DarkBlue;
+                    r.ForeColor = Color.Lime;
+                    r.BackColor = Color.Navy;
                     var heading = neededHeadings[i];
                    TableHeaderCell c = new TableHeaderCell();
                     c.Text = heading;
@@ -58,6 +59,7 @@ namespace Lefarge_FE_App
                                      where headings.Category_ID == SelectedCategory
                                      select headings.Heading_ID).ToList();
                     var selectedID = allIDs[i];
+                   // c.ID = selectedID;
                     r.Controls.Add(c);
                     tblSurvey.Controls.Add(r);
                     getHeadingsQuestions(selectedID);
@@ -81,22 +83,53 @@ namespace Lefarge_FE_App
                 {
                     TableRow r = new TableRow();
                     var question = qList[i];
-                    TableHeaderCell q = new TableHeaderCell();
+                    //ADD THE QUESTION
+                    TableCell q = new TableCell();
                     q.Text = question;
-                    q.BackColor = Color.Chartreuse;
+                    q.BackColor = Color.Lime;
+                    q.ForeColor = Color.Navy;
                     var allIDs = (from questions in conn.Questions 
                                  where  questions.Headings_Under.Contains(selectedID.ToString()) 
                 select questions.Question_ID).ToList();
-                    q.ID = allIDs[i].ToString();
+                    q.ID = allIDs[i].ToString() + ("_Question");
 
-                    
-                    
+                    TableCell response = new TableCell();
+                    Panel panel = new Panel();
+                    RadioButtonList resp = new RadioButtonList();
+
+                    resp.RepeatDirection = 0; resp.resp.AutoPostBack = true; resp.SelectedIndexChanged += new EventHandler(rbl_SelectedIndexChanged);
+                ListItem answer = new ListItem();
+                    for (int w = 0; w < 2; w++)
+                    {
+                        if (w == 0)
+                        {
+                            answer.Text = ("Yes");
+                            answer.Value =("_response=YES#_Question_#") + allIDs[i];
+                           
+                        }
+                        else if (w == 1)
+                        {
+                            answer.Text = ("No");
+                            answer.Value = ("_response=NO#_Question_#") + allIDs[i];
+                            
+                        }
+                        resp.Items.Add(answer);
+                    }
+                    panel.Controls.Add(resp);
+                    response.Controls.Add(panel);
                     r.Controls.Add(q);
+                    r.Controls.Add(response);
                     tblSurvey.Controls.Add(r);
+                  
                     
                 }
 
             }
+        }
+
+        protected void rbl_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Response.Redirect("default.aspx");
         }
         
     }
