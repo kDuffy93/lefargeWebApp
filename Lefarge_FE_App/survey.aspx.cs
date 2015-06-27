@@ -15,13 +15,25 @@ namespace Lefarge_FE_App
     {
         public int selectedCategory { get; set; }
 
+        
         public int selectedPlant { get; set; }
+
+        protected void Page_Init(object sender, EventArgs e)
+        {
+         
+
+                buildTable();
+                
+         
+
+
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
 
           
             fillSelections();
-            buildTable();
+           
         }
 
         
@@ -84,41 +96,74 @@ namespace Lefarge_FE_App
                     TableRow r = new TableRow();
                     var question = qList[i];
                     //ADD THE QUESTION
-                    TableCell q = new TableCell();
-                    q.Text = question;
-                    q.BackColor = Color.Lime;
-                    q.ForeColor = Color.Navy;
+                    TableCell cellQuestion = new TableCell();
+                    cellQuestion.Text = question;
+                    cellQuestion.BackColor = Color.Lime;
+                    cellQuestion.ForeColor = Color.Navy;
                     var allIDs = (from questions in conn.Questions 
                                  where  questions.Headings_Under.Contains(selectedID.ToString()) 
                 select questions.Question_ID).ToList();
-                    q.ID = allIDs[i].ToString() + ("_Question");
+                    cellQuestion.ID = allIDs[i].ToString() + ("_Question");
 
-                    TableCell response = new TableCell();
+                    TableCell cellResponse = new TableCell();
                     Panel panel = new Panel();
                     RadioButtonList resp = new RadioButtonList();
 
                     resp.RepeatDirection = 0; resp.AutoPostBack = true; resp.SelectedIndexChanged += new EventHandler(rbl_SelectedIndexChanged);
-                ListItem answer = new ListItem();
+                
                     for (int w = 0; w < 2; w++)
                     {
+                        ListItem answer = new ListItem();
                         if (w == 0)
                         {
                             answer.Text = ("Yes");
-                            answer.Value =("_response=YES#_Question_#") + allIDs[i];
+                            answer.Value =("yes") + allIDs[i];
                            
                         }
                         else if (w == 1)
                         {
                             answer.Text = ("No");
-                            answer.Value = ("_response=NO#_Question_#") + allIDs[i];
+                            answer.Value = ("no") + allIDs[i];
                             
                         }
                         resp.Items.Add(answer);
                     }
                     panel.Controls.Add(resp);
-                    response.Controls.Add(panel);
-                    r.Controls.Add(q);
-                    r.Controls.Add(response);
+                    cellResponse.Controls.Add(panel);
+
+                    TableCell cellDeficency = new TableCell();
+                    TextBox txtDeficency = new TextBox();
+                    txtDeficency.ID = allIDs[i] + ("_Question_Deficency");
+                    txtDeficency.TextMode = TextBoxMode.MultiLine;
+                    cellDeficency.Controls.Add(txtDeficency);
+                  
+                    TableCell cellAP = new TableCell();
+                    TextBox txtAP = new TextBox();
+                    txtAP.ID = allIDs[i] + ("_Question_ActionPlan");
+                    txtAP.TextMode = TextBoxMode.MultiLine;
+                    cellAP.Controls.Add(txtAP);
+                  
+                    TableCell cellDate = new TableCell();
+                    TextBox txtDate = new TextBox();
+                    txtDate.ID = allIDs[i] + ("_Question_DateCompleted");
+                    txtDate.TextMode = TextBoxMode.SingleLine;
+                    txtDate.Enabled = false;
+                    cellDate.Controls.Add(txtDate);
+
+                    TableCell cellDateSubmited = new TableCell();
+                    TextBox txtDateSubmited = new TextBox();
+                    txtDateSubmited.ID = allIDs[i] + ("_Question_DateSubmited");
+
+                    cellDateSubmited.Controls.Add(txtDateSubmited);
+                    cellDateSubmited.Visible = false;
+
+                    r.Controls.Add(cellQuestion);
+                    r.Controls.Add(cellResponse);
+                    r.Controls.Add(cellDeficency);
+                    r.Controls.Add(cellAP);
+                    r.Controls.Add(cellDate);
+                    r.Controls.Add(cellDateSubmited);
+                    
                     tblSurvey.Controls.Add(r);
                   
                     
@@ -129,6 +174,14 @@ namespace Lefarge_FE_App
 
         protected void rbl_SelectedIndexChanged(object sender, EventArgs e)
         {
+            RadioButtonList button = (RadioButtonList)sender;
+            string buttonId = button.ID;
+
+            foreach (ListItem item in button.Items)
+            {
+                if (item.Selected)
+                    item.Selected = true;
+            }
             Response.Redirect("default.aspx");
         }
         

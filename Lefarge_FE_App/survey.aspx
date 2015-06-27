@@ -10,7 +10,7 @@
         <asp:TextBox ID="txtCategory" runat="server" Enabled="false" Text="0"></asp:TextBox>
             </div>
          <div>
-        <asp:Label runat="server">Selected Equipment ID</asp:Label>
+        <asp:Label runat="server">selected piece of equipment:</asp:Label>
         <asp:TextBox ID="txtEquipment" runat="server" Enabled="false" Text="0"></asp:TextBox>
             </div>
         </div>
@@ -22,26 +22,7 @@
                 <asp:TableHeaderCell>Yes/No</asp:TableHeaderCell>
                 <asp:TableHeaderCell>Describe Defeciency/defect</asp:TableHeaderCell>
                 <asp:TableHeaderCell>Corrective Action Plan</asp:TableHeaderCell>
-                <asp:TableHeaderCell>Date Completed</asp:TableHeaderCell></asp:TableHeaderRow>
-            
-            <asp:TableHeaderRow runat="server">
-                 <asp:TableHeaderCell>Runways</asp:TableHeaderCell>
-            </asp:TableHeaderRow>
-            
-            <asp:TableRow runat="server">
-                 <asp:TableCell>test Row (THIS IS NOT GENERATEd FROM A DATABASE ITS HARD CODED</asp:TableCell>
-                <asp:TableCell runat="server">
-               <asp:RadioButtonList ID="rbl1" RepeatDirection="Horizontal" AutoPostBack="True" runat="server" OnSelectedIndexChanged="rbl_SelectedIndexChanged">
-                    <asp:ListItem Value="yes" Text="Yes"></asp:ListItem>
-                    <asp:ListItem Value="no" Text="No"></asp:ListItem>
-                   </asp:RadioButtonList>
-                    </asp:TableCell>
-                <asp:tableCell><asp:textBox TextMode="multiline" ID="tb1" runat="server"></asp:textBox></asp:tableCell>
-                <asp:tableCell><asp:textBox TextMode="multiline" ID="tb2" runat="server"></asp:textBox></asp:tableCell>
-                <asp:tableCell><asp:textBox Enabled="False" ID="tb3" runat="server"></asp:textBox></asp:tableCell>
-                
-               
-            </asp:TableRow>
+                <asp:TableHeaderCell>Date Completed</asp:TableHeaderCell></asp:TableHeaderRow> 
         </asp:Table>
     </div>
 </asp:Content>
