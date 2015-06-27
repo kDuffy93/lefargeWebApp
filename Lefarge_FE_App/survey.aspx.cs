@@ -51,9 +51,9 @@ namespace Lefarge_FE_App
         {
             using (DefaultConnection conn = new DefaultConnection())
             {
-                var SelectedCategory = Convert.ToInt32(Session["selectedCategory"]);
+                var SelectedCategory = Session["selectedCategory"].ToString();
                 var neededHeadings = (from headings in conn.Headings
-                                      where headings.Category_ID == SelectedCategory
+                                      where headings.Categories_Under.Contains(SelectedCategory)
                 
                          select headings.Heading1).ToList();
 
@@ -68,7 +68,7 @@ namespace Lefarge_FE_App
                    TableHeaderCell c = new TableHeaderCell();
                     c.Text = heading;
                     var allIDs = (from headings in conn.Headings
-                                     where headings.Category_ID == SelectedCategory
+                                  where headings.Categories_Under.Contains(SelectedCategory)
                                      select headings.Heading_ID).ToList();
                     var selectedID = allIDs[i];
                    // c.ID = selectedID;
@@ -88,7 +88,7 @@ namespace Lefarge_FE_App
             using (DefaultConnection conn = new DefaultConnection())
             {
                 var qList = (from questions in conn.Questions
-                    where questions.Headings_Under.Contains(selectedID.ToString()) 
+                    where questions.Headings_Under.Contains(selectedID.ToString() )
                 select questions.Question1).ToList();
                
                 for (int i = 0; i < qList.Count; i++)

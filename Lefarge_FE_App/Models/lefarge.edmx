@@ -45,7 +45,8 @@
           </Key>
           <Property Name="Heading_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Heading" Type="varchar" MaxLength="30" Nullable="false" />
-          <Property Name="Category_ID" Type="int" Nullable="false" />
+          <Property Name="Categories_Under" Type="varchar(max)" />
+          <Property Name="Category_ID" Type="int" />
         </EntityType>
         <EntityType Name="Plants">
           <Key>
@@ -121,7 +122,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Headings_0">
-          <End Role="Categories" Type="Self.Categories" Multiplicity="1">
+          <End Role="Categories" Type="Self.Categories" Multiplicity="0..1">
             <OnDelete Action="Cascade" />
           </End>
           <End Role="Headings" Type="Self.Headings" Multiplicity="*" />
@@ -246,10 +247,10 @@
           <Property Name="Category_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Category1" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Equipments" Relationship="Self.FK_Equipment_Category_ID" FromRole="Categories" ToRole="Equipment" />
-          <NavigationProperty Name="Headings" Relationship="Self.FK_Headings_0" FromRole="Categories" ToRole="Headings" />
           <NavigationProperty Name="Potential_Action_Plans" Relationship="Self.FK_Potential_Action_Plans_Category_ID" FromRole="Categories" ToRole="Potential_Action_Plans" />
           <NavigationProperty Name="Potential_Deficiencies" Relationship="Self.FK_Potential_Deficiencies_0" FromRole="Categories" ToRole="Potential_Deficiencies" />
           <NavigationProperty Name="Questions" Relationship="Self.FK_Questions_0" FromRole="Categories" ToRole="Questions" />
+          <NavigationProperty Name="Headings" Relationship="LeFarge_dbModel.FK_Headings_0" FromRole="Category" ToRole="Heading" />
         </EntityType>
         <EntityType Name="Deficiency">
           <Key>
@@ -279,8 +280,9 @@
           </Key>
           <Property Name="Heading_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Heading1" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Category_ID" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Category" Relationship="Self.FK_Headings_0" FromRole="Headings" ToRole="Categories" />
+          <Property Name="Categories_Under" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Category_ID" Type="Int32" />
+          <NavigationProperty Name="Category" Relationship="LeFarge_dbModel.FK_Headings_0" FromRole="Heading" ToRole="Category" />
         </EntityType>
         <EntityType Name="Plant">
           <Key>
@@ -343,20 +345,6 @@
               <PropertyRef Name="Category_ID" />
             </Principal>
             <Dependent Role="Equipment">
-              <PropertyRef Name="Category_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Headings_0">
-          <End Role="Categories" Type="Self.Category" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="Headings" Type="Self.Heading" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Categories">
-              <PropertyRef Name="Category_ID" />
-            </Principal>
-            <Dependent Role="Headings">
               <PropertyRef Name="Category_ID" />
             </Dependent>
           </ReferentialConstraint>
@@ -444,10 +432,6 @@
             <End Role="Categories" EntitySet="Categories" />
             <End Role="Equipment" EntitySet="Equipments" />
           </AssociationSet>
-          <AssociationSet Name="FK_Headings_0" Association="Self.FK_Headings_0">
-            <End Role="Categories" EntitySet="Categories" />
-            <End Role="Headings" EntitySet="Headings" />
-          </AssociationSet>
           <AssociationSet Name="FK_Potential_Action_Plans_Category_ID" Association="Self.FK_Potential_Action_Plans_Category_ID">
             <End Role="Categories" EntitySet="Categories" />
             <End Role="Potential_Action_Plans" EntitySet="Potential_Action_Plans" />
@@ -468,7 +452,25 @@
             <End Role="Questions" EntitySet="Questions" />
             <End Role="Results" EntitySet="Results" />
           </AssociationSet>
+          <AssociationSet Name="FK_Headings_0" Association="LeFarge_dbModel.FK_Headings_0">
+            <End Role="Category" EntitySet="Categories" />
+            <End Role="Heading" EntitySet="Headings" />
+          </AssociationSet>
         </EntityContainer>
+        <Association Name="FK_Headings_0">
+          <End Type="LeFarge_dbModel.Category" Role="Category" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="LeFarge_dbModel.Heading" Role="Heading" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="Category_ID" />
+            </Principal>
+            <Dependent Role="Heading">
+              <PropertyRef Name="Category_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -516,9 +518,10 @@
           <EntitySetMapping Name="Headings">
             <EntityTypeMapping TypeName="LeFarge_dbModel.Heading">
               <MappingFragment StoreEntitySet="Headings">
+                <ScalarProperty Name="Category_ID" ColumnName="Category_ID" />
+                <ScalarProperty Name="Categories_Under" ColumnName="Categories_Under" />
                 <ScalarProperty Name="Heading_ID" ColumnName="Heading_ID" />
                 <ScalarProperty Name="Heading1" ColumnName="Heading" />
-                <ScalarProperty Name="Category_ID" ColumnName="Category_ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

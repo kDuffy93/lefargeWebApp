@@ -16,12 +16,12 @@
         <EntityTypeShape EntityType="LeFarge_dbModel.Question" Width="1.5" PointX="3" PointY="14.875" IsExpanded="true" />
         <EntityTypeShape EntityType="LeFarge_dbModel.Result" Width="1.5" PointX="5.25" PointY="14.625" IsExpanded="true" />
         <AssociationConnector Association="LeFarge_dbModel.FK_Equipment_Category_ID" ManuallyRouted="false" />
-        <AssociationConnector Association="LeFarge_dbModel.FK_Headings_0" ManuallyRouted="false" />
         <AssociationConnector Association="LeFarge_dbModel.FK_Potential_Action_Plans_Category_ID" ManuallyRouted="false" />
         <AssociationConnector Association="LeFarge_dbModel.FK_Potential_Deficiencies_0" ManuallyRouted="false" />
         <AssociationConnector Association="LeFarge_dbModel.FK_Questions_0" ManuallyRouted="false" />
         <AssociationConnector Association="LeFarge_dbModel.FK_Equipment_Plant_ID" ManuallyRouted="false" />
         <AssociationConnector Association="LeFarge_dbModel.FK_Results_0" ManuallyRouted="false" />
+        <AssociationConnector Association="LeFarge_dbModel.FK_Headings_0" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

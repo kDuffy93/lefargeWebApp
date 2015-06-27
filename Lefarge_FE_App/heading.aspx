@@ -12,8 +12,10 @@
     
      <div class="form-group">
         
-<label for="ddlCategory" class="col-sm-3">Category:</label>
-        <asp:DropDownList  runat="server" ID="ddlCategory" DataValueField="Category_ID" DataTextField="Category1"/>
+<label for="lbCategory" class="col-sm-3">Which categories does this heading fit into?</label>
+               <asp:Panel ID="rbPanel" runat="server">
+                   <asp:CheckBoxList runat="server" id="chklstCategories" data-role="controlgroup" data-type="horizontal"></asp:CheckBoxList>
+               </asp:Panel>
     </div>
     
     <div class="col-sm-offset-3">

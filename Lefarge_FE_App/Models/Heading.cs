@@ -16,7 +16,8 @@ namespace Lefarge_FE_App.Models
     {
         public int Heading_ID { get; set; }
         public string Heading1 { get; set; }
-        public int Category_ID { get; set; }
+        public string Categories_Under { get; set; }
+        public Nullable<int> Category_ID { get; set; }
     
         public virtual Category Category { get; set; }
     }

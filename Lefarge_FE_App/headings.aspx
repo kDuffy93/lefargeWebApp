@@ -10,8 +10,7 @@
         DataKeyNames="Heading_ID">
         <Columns>        
             <asp:BoundField DataField="Heading1" HeaderText="Heading" />
-              <asp:BoundField DataField="Category_ID" HeaderText="Category"/>
-              <asp:BoundField DataField="headings_Under" HeaderText="Category"/>
+              <asp:BoundField DataField="Categories_Under" HeaderText="Categories Under"/>
             <asp:HyperLinkField HeaderText="Edit" NavigateUrl="heading.aspx" 
                  Text="Edit" DataNavigateUrlFields="Heading_ID"
                  DataNavigateUrlFormatString="heading.aspx?Heading_ID={0}" />

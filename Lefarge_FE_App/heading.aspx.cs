@@ -40,7 +40,7 @@ namespace Lefarge_FE_App
 
                 //populate the form from our department object
                 txtHeading.Text = c.Heading1;
-                ddlCategory.SelectedIndex = c.Category_ID;
+               
 
             }
         }
@@ -52,11 +52,14 @@ namespace Lefarge_FE_App
                 var c = (from cat in conn.Categories
                    
                 select cat).ToList();
-                ddlCategory.DataSource = c;
-                ddlCategory.DataBind();
-
-
-
+                
+               for (int t =0; t < c.Count; t++)
+                {
+                   ListItem a = new ListItem();
+                   a.Text=  c[t].Category1;
+                    a.Value = c[t].Category_ID + (",");
+                    chklstCategories.Items.Add(a);
+               }
             }
         }
 
@@ -86,7 +89,24 @@ namespace Lefarge_FE_App
 
 
                 c.Heading1 = txtHeading.Text;
-                c.Category_ID = Convert.ToInt32(ddlCategory.SelectedValue);
+                  // Create the list to store.
+        string selectedCategoryValues = null;
+        // Loop through each item.
+        foreach (ListItem item in chklstCategories.Items)
+        {
+            if (item.Selected)
+            {
+                // If the item is selected, add the value to the list.
+                selectedCategoryValues = selectedCategoryValues + item.Value;
+            }
+            else
+            {
+                // Item is not selected, do something else.
+            }
+
+        }
+                
+        c.Categories_Under = selectedCategoryValues.ToString();
 
                 if (Request.QueryString.Count == 0)
                 {
