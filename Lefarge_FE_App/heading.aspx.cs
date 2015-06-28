@@ -13,6 +13,7 @@ namespace Lefarge_FE_App
         protected void Page_Load(object sender, EventArgs e)
         {
             //if the page isn't posted back, check the url for an id to see know add or edit
+            fillDropDown();
             if (!IsPostBack)
             {
                 if (Request.QueryString.Keys.Count > 0)
@@ -23,7 +24,7 @@ namespace Lefarge_FE_App
                 }
                 
             }
-            fillDropDown();
+            
         }
 
         protected void GetHeading()
@@ -40,9 +41,22 @@ namespace Lefarge_FE_App
 
                 //populate the form from our department object
                 txtHeading.Text = c.Heading1;
+              var categoriesUnder =  c.Categories_Under.ToString();
                
+             var allCategories = (from head in conn.Headings
+                         
+                         select head.Heading_ID).ToList();
 
-            }
+                
+            
+               for (int i = 1; i < allCategories.Count(); i++)
+               {
+                   if (categoriesUnder.Contains(i.ToString()))
+                   {
+                       chklstCategories.Items[i].Selected = true;
+                   }
+               }
+        }
         }
 
         protected void fillDropDown()

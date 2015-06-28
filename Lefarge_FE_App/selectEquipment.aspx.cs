@@ -16,13 +16,6 @@ namespace Lefarge_FE_App
         {
             if (!IsPostBack)
             {
-                if (Request.QueryString.Keys.Count > 0)
-                {
-                    //we have a url parameter if the count is > 0 so populate the form
-
-
-                
-                }
                
                 fillSelections();
                 fillBtnPnl();
@@ -49,19 +42,19 @@ namespace Lefarge_FE_App
                 var b = (from equip in conn.Equipments
                     where equip.Category_ID == SelectedCategory & equip.Plant_ID == SelectedPlant
                     select equip).ToList();
-
-               
+              
                     for (int i = 0; i < b.Count; i++)
                     {
                        
                         HyperLink equipmentButton = new HyperLink();
                         equipmentButton.Text = b[i].Name;
-                        equipmentButton.CssClass = "btn btn-primary";
+                       
+                      
                         equipmentButton.NavigateUrl = "survey.aspx?selectedEquipment=" + b[i].Unit_Number;
                         pnlButtons.Controls.Add(equipmentButton);
 
+
                     }
-                
 
                 //set the datasource to the created list and bind it to the dropdown
 
