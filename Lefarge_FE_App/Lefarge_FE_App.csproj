@@ -46,6 +46,15 @@
     <Reference Include="EntityFramework.SqlServer">
       <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Junior.Common">
+      <HintPath>..\packages\JuniorCommon.3.8.1\lib\net45\Junior.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Junior.Ddd.DomainModel">
+      <HintPath>..\packages\JuniorDDD.DomainModel.3.0.0\lib\net40\Junior.Ddd.DomainModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Junior.Ddd.Validation">
+      <HintPath>..\packages\JuniorDDD.Validation.3.0.0\lib\net40\Junior.Ddd.Validation.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
@@ -104,6 +113,8 @@
   <ItemGroup>
     <Content Include="default.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="question.aspx" />
+    <Content Include="questionList.aspx" />
     <Content Include="startSurvey.aspx" />
     <Content Include="selectEquipment.aspx" />
     <Content Include="survey.aspx" />
@@ -158,6 +169,7 @@
     <Compile Include="Models\Category.cs">
       <DependentUpon>lefarge.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\lefargeEntities.cs" />
     <Compile Include="Models\Deficiency.cs">
       <DependentUpon>lefarge.tt</DependentUpon>
     </Compile>
@@ -228,6 +240,20 @@
     </Compile>
     <Compile Include="Models\Result.cs">
       <DependentUpon>lefarge.tt</DependentUpon>
+    </Compile>
+    <Compile Include="question.aspx.cs">
+      <DependentUpon>question.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="question.aspx.designer.cs">
+      <DependentUpon>question.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="questionList.aspx.cs">
+      <DependentUpon>questionList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="questionList.aspx.designer.cs">
+      <DependentUpon>questionList.aspx</DependentUpon>
     </Compile>
     <Compile Include="startSurvey.aspx.cs">
       <DependentUpon>startSurvey.aspx</DependentUpon>

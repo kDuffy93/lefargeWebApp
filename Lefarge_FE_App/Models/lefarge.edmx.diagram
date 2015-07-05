@@ -20,7 +20,6 @@
         <AssociationConnector Association="LeFarge_dbModel.FK_Potential_Deficiencies_0" ManuallyRouted="false" />
         <AssociationConnector Association="LeFarge_dbModel.FK_Questions_0" ManuallyRouted="false" />
         <AssociationConnector Association="LeFarge_dbModel.FK_Equipment_Plant_ID" ManuallyRouted="false" />
-        <AssociationConnector Association="LeFarge_dbModel.FK_Results_0" ManuallyRouted="false" />
         <AssociationConnector Association="LeFarge_dbModel.FK_Headings_0" />
       </Diagram>
     </edmx:Diagrams>

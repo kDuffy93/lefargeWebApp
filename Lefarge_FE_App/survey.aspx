@@ -16,13 +16,16 @@
         </div>
     <div id="srvMain" class="well">
         <asp:Table id="tblSurvey"  CssClass="table table-striped" CellPadding="5" CellSpacing="5"
-        Gridlines="both" runat="server">
+        Gridlines="both" runat="server" EnableViewState="true">
             <asp:TableHeaderRow runat="server">
                 <asp:TableHeaderCell>Question</asp:TableHeaderCell>
                 <asp:TableHeaderCell>Yes/No</asp:TableHeaderCell>
                 <asp:TableHeaderCell>Describe Defeciency/defect</asp:TableHeaderCell>
                 <asp:TableHeaderCell>Corrective Action Plan</asp:TableHeaderCell>
-                <asp:TableHeaderCell>Date Completed</asp:TableHeaderCell></asp:TableHeaderRow> 
-        </asp:Table>
+                <asp:TableHeaderCell>Date</asp:TableHeaderCell>
+
+            </asp:TableHeaderRow>
+                        </asp:Table>
     </div>
+    <asp:Button runat="server" text="Submit" ID="btnSubmit"   OnClick="btnSubmit_Click" CssClass="btn btn-primary"/>
 </asp:Content>

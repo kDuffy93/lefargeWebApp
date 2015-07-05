@@ -92,8 +92,10 @@
           <Property Name="Response" Type="bit" Nullable="false" />
           <Property Name="Date_Completed" Type="date" Nullable="false" />
           <Property Name="Question_ID" Type="int" Nullable="false" />
-          <Property Name="Action_plan" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="Action_plan" Type="varchar" MaxLength="500" />
           <Property Name="deficiency/defect" Type="varchar" MaxLength="500" />
+          <Property Name="Equipment_ID" Type="int" Nullable="false" />
+          <Property Name="heading_ID" Type="int" Nullable="false" />
         </EntityType>
         <Association Name="FK_Equipment_Plant_ID">
           <End Role="Plants" Type="Self.Plants" Multiplicity="1">
@@ -177,18 +179,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Results_0">
-          <End Role="Questions" Type="Self.Questions" Multiplicity="1" />
-          <End Role="Results" Type="Self.Results" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Questions">
-              <PropertyRef Name="Question_ID" />
-            </Principal>
-            <Dependent Role="Results">
-              <PropertyRef Name="Question_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="LeFarge_dbModelStoreContainer">
           <EntitySet Name="Action_Plan" EntityType="Self.Action_Plan" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Categories" EntityType="Self.Categories" Schema="dbo" store:Type="Tables" />
@@ -223,10 +213,6 @@
           <AssociationSet Name="FK_Questions_0" Association="Self.FK_Questions_0">
             <End Role="Categories" EntitySet="Categories" />
             <End Role="Questions" EntitySet="Questions" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Results_0" Association="Self.FK_Results_0">
-            <End Role="Questions" EntitySet="Questions" />
-            <End Role="Results" EntitySet="Results" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -322,7 +308,6 @@
           <Property Name="Question1" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Category_ID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Category" Relationship="Self.FK_Questions_0" FromRole="Questions" ToRole="Categories" />
-          <NavigationProperty Name="Results" Relationship="Self.FK_Results_0" FromRole="Questions" ToRole="Results" />
           <Property Name="Headings_Under" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Result">
@@ -333,9 +318,10 @@
           <Property Name="Response" Type="Boolean" Nullable="false" />
           <Property Name="Date_Completed" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Question_ID" Type="Int32" Nullable="false" />
-          <Property Name="Action_plan" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Action_plan" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
           <Property Name="deficiency_defect" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Question" Relationship="Self.FK_Results_0" FromRole="Results" ToRole="Questions" />
+          <Property Name="Equipment_ID" Type="Int32" Nullable="false" />
+          <Property Name="heading_ID" Type="Int32" Nullable="false" />
         </EntityType>
         <Association Name="FK_Equipment_Category_ID">
           <End Role="Categories" Type="Self.Category" Multiplicity="1" />
@@ -405,18 +391,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Results_0">
-          <End Role="Questions" Type="Self.Question" Multiplicity="1" />
-          <End Role="Results" Type="Self.Result" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Questions">
-              <PropertyRef Name="Question_ID" />
-            </Principal>
-            <Dependent Role="Results">
-              <PropertyRef Name="Question_ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="DefaultConnection" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Action_Plan" EntityType="Self.Action_Plan" />
           <EntitySet Name="Categories" EntityType="Self.Category" />
@@ -447,10 +421,6 @@
           <AssociationSet Name="FK_Equipment_Plant_ID" Association="Self.FK_Equipment_Plant_ID">
             <End Role="Plants" EntitySet="Plants" />
             <End Role="Equipment" EntitySet="Equipments" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Results_0" Association="Self.FK_Results_0">
-            <End Role="Questions" EntitySet="Questions" />
-            <End Role="Results" EntitySet="Results" />
           </AssociationSet>
           <AssociationSet Name="FK_Headings_0" Association="LeFarge_dbModel.FK_Headings_0">
             <End Role="Category" EntitySet="Categories" />
@@ -568,6 +538,8 @@
           <EntitySetMapping Name="Results">
             <EntityTypeMapping TypeName="LeFarge_dbModel.Result">
               <MappingFragment StoreEntitySet="Results">
+                <ScalarProperty Name="heading_ID" ColumnName="heading_ID" />
+                <ScalarProperty Name="Equipment_ID" ColumnName="Equipment_ID" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Response" ColumnName="Response" />
                 <ScalarProperty Name="Date_Completed" ColumnName="Date_Completed" />

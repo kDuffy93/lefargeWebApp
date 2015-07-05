@@ -20,7 +20,7 @@ namespace Lefarge_FE_App.Models
         public int Question_ID { get; set; }
         public string Action_plan { get; set; }
         public string deficiency_defect { get; set; }
-    
-        public virtual Question Question { get; set; }
+        public int Equipment_ID { get; set; }
+        public int heading_ID { get; set; }
     }
 }

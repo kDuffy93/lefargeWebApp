@@ -10,51 +10,42 @@
 namespace Lefarge_FE_App {
     
     
-    public partial class survey1 {
+    public partial class question {
         
         /// <summary>
-        /// txtPlant control.
+        /// txtQuestion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPlant;
+        protected global::System.Web.UI.WebControls.TextBox txtQuestion;
         
         /// <summary>
-        /// txtCategory control.
+        /// rbPanel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCategory;
+        protected global::System.Web.UI.WebControls.Panel rbPanel;
         
         /// <summary>
-        /// txtEquipment control.
+        /// chklstHeadings control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEquipment;
+        protected global::System.Web.UI.WebControls.CheckBoxList chklstHeadings;
         
         /// <summary>
-        /// tblSurvey control.
+        /// btnSave control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Table tblSurvey;
-        
-        /// <summary>
-        /// btnSubmit control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSubmit;
+        protected global::System.Web.UI.WebControls.Button btnSave;
     }
 }

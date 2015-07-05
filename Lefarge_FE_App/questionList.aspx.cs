@@ -1,0 +1,54 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using Lefarge_FE_App.Models;
+
+namespace Lefarge_FE_App
+{
+    public partial class questionList : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if(!IsPostBack)
+            {
+                getQuestion();
+            }
+
+        }
+        protected void getQuestion()
+        {
+            using (DefaultConnection conn = new DefaultConnection())
+            {
+                var questions = from q in conn.Questions
+                           select q;
+
+                //bind the query result to the gridview
+                grdQuestions.DataSource = questions.ToList();
+                grdQuestions.DataBind();
+
+            }
+        }
+        protected void grdQuestions_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            using (DefaultConnection conn = new DefaultConnection())
+            {
+                //get the selected DepartmentID
+                Int32 QuestionID = Convert.ToInt32(grdQuestions.DataKeys[e.RowIndex].Values["Question_ID"]);
+
+                var c = (from head in conn.Questions
+                         where head.Question_ID == QuestionID
+                         select head).FirstOrDefault();
+
+                //process the delete
+                conn.Questions.Remove(c);
+                conn.SaveChanges();
+
+                //update the grid
+                getQuestion();
+            }
+        }
+    }
+}

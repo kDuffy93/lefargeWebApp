@@ -14,17 +14,11 @@ namespace Lefarge_FE_App.Models
     
     public partial class Question
     {
-        public Question()
-        {
-            this.Results = new HashSet<Result>();
-        }
-    
         public int Question_ID { get; set; }
         public string Question1 { get; set; }
         public int Category_ID { get; set; }
         public string Headings_Under { get; set; }
     
         public virtual Category Category { get; set; }
-        public virtual ICollection<Result> Results { get; set; }
     }
 }

@@ -49,7 +49,7 @@ namespace Lefarge_FE_App
 
                 
             
-               for (int i = 1; i < allCategories.Count(); i++)
+               for (int i = 0; i < allCategories.Count(); i++)
                {
                    if (categoriesUnder.Contains(i.ToString()))
                    {

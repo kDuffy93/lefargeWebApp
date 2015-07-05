@@ -11,6 +11,7 @@
     
 	<script src="http://code.jquery.com/mobile/1.0a1/jquery.mobile-1.0a1.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    
 </head>
 <body>
    
@@ -24,6 +25,7 @@
             <li><a rel="external" href="equipmentList.aspx">Equipment</a></li>
             <li><a rel="external" href="categories.aspx">Categories</a></li>
             <li><a rel="external" href="headings.aspx">Headings</a></li>
+            <li><a rel="external" href="questionList.aspx">Questions</a></li>
             </ul>
     </nav>
    
