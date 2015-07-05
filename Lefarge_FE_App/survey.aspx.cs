@@ -265,7 +265,7 @@ namespace Lefarge_FE_App
                                     if (indexOfUnderscore == -1)
                                     {
                                         continue;
-                                    }
+                                    } 
                                 }
                                 catch (NullReferenceException)
                                 {
