@@ -91,8 +91,6 @@ namespace Lefarge_FE_App
                         Button btnSubmit = new Button();
                         btnSubmit.Click += new EventHandler(btnSubmit_Click);
                         btnSubmit.Text = "submit";
-                        btnSubmit.ID = "submit";
-                        btnSubmit.Visible = false;
                         btnCell.Controls.Add(btnSubmit);
 
                         
