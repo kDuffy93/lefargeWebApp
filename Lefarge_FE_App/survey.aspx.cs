@@ -315,7 +315,7 @@ namespace Lefarge_FE_App
                                     {
                                         r.Action_plan = txt.Text;
                                     }//checks if txtbox is action plan
-                                }//checks for txtbox
+                                }//checks for txtbox  
                             }
                             }//foreach control
 
