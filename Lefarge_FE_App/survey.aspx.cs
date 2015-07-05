@@ -156,8 +156,8 @@ namespace Lefarge_FE_App
 
                     TableCell cellDeficency = new TableCell();
                     TextBox txtDeficency = new TextBox();
-                    
-                    txtDeficency.Attributes.Add("width", "245");
+
+                    txtDeficency.Width = 245;
                     txtDeficency.ID = allIDs[i] + ("_Deficency_H=") + selectedID;
                     txtDeficency.TextMode = TextBoxMode.MultiLine;
                     cellDeficency.Controls.Add(txtDeficency);
@@ -165,8 +165,8 @@ namespace Lefarge_FE_App
                     TableCell cellAP = new TableCell();
                    
                     TextBox txtAP = new TextBox();
-                    
-                    txtAP.Attributes.Add("width", "245");
+
+                    txtAP.Width = 245;
                     txtAP.ID = allIDs[i] + ("_ActionPlan_H=") + selectedID;
                     txtAP.TextMode = TextBoxMode.MultiLine;
                     cellAP.Controls.Add(txtAP);
