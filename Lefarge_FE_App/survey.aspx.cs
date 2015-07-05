@@ -156,20 +156,21 @@ namespace Lefarge_FE_App
 
                     TableCell cellDeficency = new TableCell();
                     TextBox txtDeficency = new TextBox();
-                    txtDeficency.Width = 225;
+                    txtDeficency.Attributes.Add("data-role", "fieldcontain");
                     txtDeficency.ID = allIDs[i] + ("_Deficency_H=") + selectedID;
                     txtDeficency.TextMode = TextBoxMode.MultiLine;
                     cellDeficency.Controls.Add(txtDeficency);
 
                     TableCell cellAP = new TableCell();
+                   
                     TextBox txtAP = new TextBox();
-                     txtAP.Width=225;
+                    txtAP.Attributes.Add("data-role", "fieldcontain");
                     txtAP.ID = allIDs[i] + ("_ActionPlan_H=") + selectedID;
                     txtAP.TextMode = TextBoxMode.MultiLine;
                     cellAP.Controls.Add(txtAP);
 
                     TableCell cellDate = new TableCell();
-
+                    cellDate.Visible = false;
 
                     TableCell cellDateSubmited = new TableCell();
                     TextBox txtDateSubmited = new TextBox();
