@@ -156,6 +156,7 @@ namespace Lefarge_FE_App
 
                     TableCell cellDeficency = new TableCell();
                     TextBox txtDeficency = new TextBox();
+                    txtDeficency.Width=
                     txtDeficency.ID = allIDs[i] + ("_Deficency_H=") + selectedID;
                     txtDeficency.TextMode = TextBoxMode.MultiLine;
                     cellDeficency.Controls.Add(txtDeficency);
@@ -327,8 +328,15 @@ namespace Lefarge_FE_App
 
 
                 } //for each table row
+            btnNewSurvey.Visible = true;
+            }
 
-            }// btn submit click close
+        
+
+        protected void btnNewSurvey_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("startSurvey.aspx");
+        }// btn submit click close
 
 
 
