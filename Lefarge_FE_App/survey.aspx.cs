@@ -91,7 +91,12 @@ namespace Lefarge_FE_App
                         Button btnSubmit = new Button();
                         btnSubmit.Click += new EventHandler(btnSubmit_Click);
                         btnSubmit.Text = "submit";
+                        btnSubmit.ID = "submit";
+                        btnSubmit.Visible = false;
                         btnCell.Controls.Add(btnSubmit);
+
+                        
+
                         btnRow.Controls.Add(btnCell);
                         tblSurvey.Controls.Add(btnRow);
                     }
@@ -332,7 +337,7 @@ namespace Lefarge_FE_App
         {
             Response.Redirect("startSurvey.aspx");
         }// btn submit click close
-
+       
 
 
 

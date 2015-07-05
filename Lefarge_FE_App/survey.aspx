@@ -19,7 +19,7 @@
         Gridlines="both" runat="server" border-right-width="1" EnableViewState="true">
             <asp:TableHeaderRow runat="server">
                 <asp:TableHeaderCell width="175">Question</asp:TableHeaderCell>
-                <asp:TableHeaderCell>Yes/No</asp:TableHeaderCell>
+                <asp:TableHeaderCell Width="75">Yes/No</asp:TableHeaderCell>
                 <asp:TableHeaderCell width="200">Describe Defeciency/defect</asp:TableHeaderCell>
                 <asp:TableHeaderCell width="200">Corrective Action Plan</asp:TableHeaderCell>
             </asp:TableHeaderRow>
