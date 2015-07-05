@@ -12,7 +12,7 @@
             </div>
         </div>
         <div>
-            <h1> Select which pieceof equipment you would like to complete a survey for</h1>
+            <h2> Select which piece of equipment would you like to do a survey on:</h2>
         </div>
         
        
