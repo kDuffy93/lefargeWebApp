@@ -22,7 +22,7 @@
                 <asp:TableHeaderCell>Yes/No</asp:TableHeaderCell>
                 <asp:TableHeaderCell>Describe Defeciency/defect</asp:TableHeaderCell>
                 <asp:TableHeaderCell>Corrective Action Plan</asp:TableHeaderCell>
-                <asp:TableHeaderCell>Date</asp:TableHeaderCell>
+                <asp:TableHeaderCell>Date</asp:TableHeaderCell> 
             </asp:TableHeaderRow>
          </asp:Table>
     </div>
