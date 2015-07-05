@@ -12,8 +12,8 @@
          <div>
         <asp:Label runat="server">selected piece of equipment:</asp:Label>
         <asp:TextBox ID="txtEquipment" runat="server" Enabled="false" Text="0"></asp:TextBox>
-            </div>
-        </div>
+            </div>   
+        </div> 
     <div id="srvMain">
         <asp:Table id="tblSurvey"  CssClass="table table-striped" CellPadding="5" CellSpacing="5"
         Gridlines="both" runat="server" EnableViewState="true">
@@ -23,9 +23,8 @@
                 <asp:TableHeaderCell>Describe Defeciency/defect</asp:TableHeaderCell>
                 <asp:TableHeaderCell>Corrective Action Plan</asp:TableHeaderCell>
                 <asp:TableHeaderCell>Date</asp:TableHeaderCell>
-
             </asp:TableHeaderRow>
-                        </asp:Table>
+         </asp:Table>
     </div>
     <asp:Button runat="server" Visible="false" text="Start a new survey" ID="btnNewSurvey" OnClick="btnNewSurvey_Click" CssClass="btn btn-primary"/>
 </asp:Content>
