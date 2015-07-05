@@ -131,7 +131,7 @@ namespace Lefarge_FE_App
                     cellResponse.ID = allIDs[i].ToString() + ("_response_H=") + selectedID;
                     RadioButtonList resp = new RadioButtonList();
 
-                    resp.RepeatDirection = 0;
+                    
                     resp.Attributes.Add("ID", allIDs[i].ToString() + "_response_H=" + selectedID + "rbl");
                     for (int w = 0; w < 2; w++)
                     {
