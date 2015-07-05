@@ -11,6 +11,9 @@
         <asp:TextBox ID="txtCategory" runat="server" Enabled="false" Text="0"></asp:TextBox>
             </div>
         </div>
+        <div>
+            <h1> Select which pieceof equipment you would like to complete a survey for</h1>
+        </div>
         
        
             <div>
