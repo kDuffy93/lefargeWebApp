@@ -16,7 +16,7 @@
         </div> 
     <div id="srvMain">
         <asp:Table id="tblSurvey"  CssClass="table table-striped" CellPadding="5" CellSpacing="5"
-        Gridlines="both" runat="server" EnableViewState="true">
+        Gridlines="both" runat="server" border-right-width="1" EnableViewState="true">
             <asp:TableHeaderRow runat="server">
                 <asp:TableHeaderCell>Question</asp:TableHeaderCell>
                 <asp:TableHeaderCell>Yes/No</asp:TableHeaderCell>

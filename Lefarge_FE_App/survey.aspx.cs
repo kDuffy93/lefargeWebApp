@@ -171,27 +171,18 @@ namespace Lefarge_FE_App
                     txtAP.TextMode = TextBoxMode.MultiLine;
                     cellAP.Controls.Add(txtAP);
 
-                    TableCell cellDate = new TableCell();
-                    cellDate.Visible = false;
-
-                    TableCell cellDateSubmited = new TableCell();
-                    TextBox txtDateSubmited = new TextBox();
-                    txtDateSubmited.ID = allIDs[i] + ("_DateSubmited_H=") + selectedID;
-
-                    cellDateSubmited.Controls.Add(txtDateSubmited);
-                    cellDateSubmited.Visible = false;
+                    
 
                     r.Controls.Add(cellQuestion);
                     r.Controls.Add(cellResponse);
                     r.Controls.Add(cellDeficency);
                     r.Controls.Add(cellAP);
-                    r.Controls.Add(cellDate);
-                    r.Controls.Add(cellDateSubmited);
+                    
 
 
                     tblSurvey.Controls.Add(r);
 
-
+                   
                 }
 
             }
