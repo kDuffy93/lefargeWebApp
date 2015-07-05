@@ -18,10 +18,10 @@
         <asp:Table id="tblSurvey"  CssClass="table table-striped" CellPadding="5" CellSpacing="5"
         Gridlines="both" runat="server" border-right-width="1" EnableViewState="true">
             <asp:TableHeaderRow runat="server">
-                <asp:TableHeaderCell>Question</asp:TableHeaderCell>
+                <asp:TableHeaderCell width="175">Question</asp:TableHeaderCell>
                 <asp:TableHeaderCell>Yes/No</asp:TableHeaderCell>
-                <asp:TableHeaderCell width="250">Describe Defeciency/defect</asp:TableHeaderCell>
-                <asp:TableHeaderCell width="250">Corrective Action Plan</asp:TableHeaderCell>
+                <asp:TableHeaderCell width="200">Describe Defeciency/defect</asp:TableHeaderCell>
+                <asp:TableHeaderCell width="200">Corrective Action Plan</asp:TableHeaderCell>
             </asp:TableHeaderRow>
          </asp:Table>
     </div>
