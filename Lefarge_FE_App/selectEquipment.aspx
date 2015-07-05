@@ -14,7 +14,7 @@
         
        
             <div>
-              <asp:Panel ID="pnlButtons" runat="server" on></asp:Panel>
+              <asp:Panel ID="pnlButtons" runat="server"></asp:Panel>
                
             </div>
         
