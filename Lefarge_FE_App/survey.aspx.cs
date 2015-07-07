@@ -11,12 +11,21 @@ using Lefarge_FE_App.Models;
 namespace Lefarge_FE_App
 {
 
-    public partial class survey1 : System.Web.UI.Page
+    public partial class survey1 :
+    System.Web.UI.Page
     {
-        public int selectedCategory { get; set; }
+        public int selectedCategory
+        {
+            get;
+            set;
+        }
 
 
-        public int selectedPlant { get; set; }
+        public int selectedPlant
+        {
+            get;
+            set;
+        }
 
         protected void Page_Init(object sender, EventArgs e)
         {
@@ -93,7 +102,7 @@ namespace Lefarge_FE_App
                         btnSubmit.Text = "submit";
                         btnCell.Controls.Add(btnSubmit);
 
-                        
+
 
                         btnRow.Controls.Add(btnCell);
                         tblSurvey.Controls.Add(btnRow);
@@ -134,7 +143,7 @@ namespace Lefarge_FE_App
                     cellResponse.ID = allIDs[i].ToString() + ("_response_H=") + selectedID;
                     RadioButtonList resp = new RadioButtonList();
 
-                    
+
                     resp.Attributes.Add("ID", allIDs[i].ToString() + "_response_H=" + selectedID + "rbl");
                     for (int w = 0; w < 2; w++)
                     {
@@ -166,7 +175,7 @@ namespace Lefarge_FE_App
                     cellDeficency.Controls.Add(txtDeficency);
 
                     TableCell cellAP = new TableCell();
-                   
+
                     TextBox txtAP = new TextBox();
 
                     txtAP.Width = 195;
@@ -174,18 +183,18 @@ namespace Lefarge_FE_App
                     txtAP.TextMode = TextBoxMode.MultiLine;
                     cellAP.Controls.Add(txtAP);
 
-                    
+
 
                     r.Controls.Add(cellQuestion);
                     r.Controls.Add(cellResponse);
                     r.Controls.Add(cellDeficency);
                     r.Controls.Add(cellAP);
-                    
+
 
 
                     tblSurvey.Controls.Add(r);
 
-                   
+
                 }
 
             }
@@ -238,16 +247,16 @@ namespace Lefarge_FE_App
             {
 
 
-              
-                    if (workingRow.GetType() == typeof(TableHeaderRow))
+
+                if (workingRow.GetType() == typeof(TableHeaderRow))
+                {
+                    continue;
+                }
+
+                else
+                {
+                    using (DefaultConnection conn = new DefaultConnection())
                     {
-                        continue;
-                    }
-                        
-                    else
-                    {
-                        using (DefaultConnection conn = new DefaultConnection())
-                        {
                         Result r = new Result();
                         DateTime dateAndTime = DateTime.Now;
                         // set date completed
@@ -268,7 +277,7 @@ namespace Lefarge_FE_App
                                     if (indexOfUnderscore == -1)
                                     {
                                         continue;
-                                    } 
+                                    }
                                 }
                                 catch (NullReferenceException)
                                 {
@@ -288,19 +297,19 @@ namespace Lefarge_FE_App
                                 {
 
                                     RadioButtonList rbl = (RadioButtonList)control;
-                                   
-                                        
-                                            if (rbl.SelectedValue == "true")
-                                            {
-                                                r.Response = true;
-                                            }
-                                       
-                                        else if (rbl.SelectedValue == "false")
-                                        {
-                                            r.Response = false;
-                                        }
-                                
-                                }// check control to see if its a rbl  
+
+
+                                    if (rbl.SelectedValue == "true")
+                                    {
+                                        r.Response = true;
+                                    }
+
+                                    else if (rbl.SelectedValue == "false")
+                                    {
+                                        r.Response = false;
+                                    }
+
+                                } // check control to see if its a rbl
 
                                 if (control.GetType() == typeof(TextBox))
                                 {
@@ -308,39 +317,38 @@ namespace Lefarge_FE_App
                                     if (txt.ID == (r.Question_ID + "_Deficency_H=" + r.heading_ID))
                                     {
                                         r.deficiency_defect = txt.Text;
-                                    }// checks if txt box is a defect
+                                    } // checks if txt box is a defect
                                     else if (txt.ID == (r.Question_ID + "_ActionPlan_H=" + r.heading_ID))
                                     {
                                         r.Action_plan = txt.Text;
-                                    }//checks if txtbox is action plan
-                                }//checks for txtbox  
+                                    } //checks if txtbox is action plan
+                                } //checks for txtbox
                             }
-                            }//foreach control
+                        } //foreach control
 
                         conn.Results.Add(r);
                         conn.SaveChanges();
-                    }// checks to see if workign row is not a header row
-
-                        
-                    }//default conn
+                    } // checks to see if workign row is not a header row
 
 
-                } //for each table row
+                } //default conn
+
+
+            } //for each table row
             btnNewSurvey.Visible = true;
-            }
+        }
 
-        
+
 
         protected void btnNewSurvey_Click(object sender, EventArgs e)
         {
             Response.Redirect("startSurvey.aspx");
-        }// btn submit click close
-       
+        } // btn submit click close
 
 
 
 
-        }// partial class close
 
-    }//namespace close
+    } // partial class close
+} //namespace close
 

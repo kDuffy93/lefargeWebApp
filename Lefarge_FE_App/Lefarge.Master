@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-   <title>Lefarge Fixed Equipment Surveys</title>
+   <title>Lafarge Fixed Equipment Surveys</title>
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css"/>
@@ -16,10 +16,11 @@
 <body>
    
     <form data-role="page" runat="server">
-        <h1 class="label label-primary">Lefarge Fixed Equipment Surveys</h1>
+
   <nav class="nav navbar-default">
-        <a rel="external" href="default.aspx" class="nav navbar-brand">Lefarge</a>
+       
         <ul class="nav navbar-nav">
+            <li> <a href="default.aspx"> <asp:Image runat="server"  rel="external" ImageUrl="images/lafarge.jpg" PostBackUrl="~/default.aspx" AlternateText="Lafarge Home"/></a></li>
             <li><a rel="external" href="startSurvey.aspx">Start Survey</a></li>
             <li><a rel="external" href="plants.aspx">Plant</a></li>
             <li><a rel="external" href="equipmentList.aspx">Equipment</a></li>

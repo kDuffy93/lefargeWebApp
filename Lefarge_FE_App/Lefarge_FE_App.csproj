@@ -82,6 +82,7 @@
     <Content Include="equipmentList.aspx" />
     <Content Include="heading.aspx" />
     <Content Include="headings.aspx" />
+    <Content Include="images\lafarge.jpg" />
     <Content Include="plant.aspx" />
     <Content Include="Lefarge.Master" />
     <Content Include="plants.aspx" />
