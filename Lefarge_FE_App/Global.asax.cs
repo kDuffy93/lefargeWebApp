@@ -11,12 +11,12 @@ namespace Lefarge_FE_App
     {
         protected void Application_Start(object sender, EventArgs e)
         {
-
+   
         }
-        void Session_Start(object sender, EventArgs e)
+        protected void Session_start(object sender, EventArgs e)
         {
-            // Code that runs when a new session is started
-            Session.Timeout = 120;
+            Session.Timeout = 240;
         }
+       
     }
 }
