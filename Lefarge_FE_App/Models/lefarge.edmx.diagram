@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="b6799a616893484f87c461d4361878a9" Name="Diagram1">
+      <Diagram DiagramId="b6799a616893484f87c461d4361878a9" Name="Diagram1" ZoomLevel="74">
         <EntityTypeShape EntityType="LeFarge_dbModel.Action_Plan" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="LeFarge_dbModel.Category" Width="1.5" PointX="0.75" PointY="7.125" IsExpanded="true" />
         <EntityTypeShape EntityType="LeFarge_dbModel.Deficiency" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
@@ -14,7 +14,7 @@
         <EntityTypeShape EntityType="LeFarge_dbModel.Potential_Action_Plans" Width="1.5" PointX="3" PointY="9.625" IsExpanded="true" />
         <EntityTypeShape EntityType="LeFarge_dbModel.Potential_Deficiencies" Width="1.5" PointX="3" PointY="12.125" IsExpanded="true" />
         <EntityTypeShape EntityType="LeFarge_dbModel.Question" Width="1.5" PointX="3" PointY="14.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="LeFarge_dbModel.Result" Width="1.5" PointX="5.25" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LeFarge_dbModel.Result" Width="1.5" PointX="6.625" PointY="14.25" IsExpanded="true" />
         <AssociationConnector Association="LeFarge_dbModel.FK_Equipment_Category_ID" ManuallyRouted="false" />
         <AssociationConnector Association="LeFarge_dbModel.FK_Potential_Action_Plans_Category_ID" ManuallyRouted="false" />
         <AssociationConnector Association="LeFarge_dbModel.FK_Potential_Deficiencies_0" ManuallyRouted="false" />

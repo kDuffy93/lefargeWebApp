@@ -41,20 +41,29 @@ namespace Lefarge_FE_App
 
                 //populate the form from our department object
                 txtQuestion.Text = c.Question1;
+
                 var headingsUnder = c.Headings_Under.ToString();
 
                 var allHeadings = (from cat in conn.Headings
 
                                      select cat.Heading_ID).ToList();
+                var headLength = allHeadings.Count();
+                int lastID = allHeadings[headLength - 1];
 
 
 
-                for (int i = 1; i < allHeadings.Count(); i++)
+                for (int i = 0; i < lastID; i++)
                 {
-                    if (headingsUnder.Contains(i.ToString()))
-                    {
-                        chklstHeadings.Items[i].Selected = true;
-                    }
+                   foreach(ListItem h in chklstHeadings.Items)
+                   {
+                       if (headingsUnder.Contains((i + 1).ToString()))
+                       {
+                           if( h.Value==((i+1)+","))
+                           {
+                               h.Selected=true;
+                           }
+                       }
+                   }
                 }
             }
         }
@@ -72,6 +81,7 @@ namespace Lefarge_FE_App
                     ListItem a = new ListItem();
                     a.Text = c[t].Heading1;
                     a.Value = c[t].Heading_ID + (",");
+                    
                     chklstHeadings.Items.Add(a);
                 }
             }
@@ -80,7 +90,8 @@ namespace Lefarge_FE_App
 
 
 
-        protected void btnSave_OnClick(object sender, EventArgs e)
+
+        protected void btnSave_Click(object sender, EventArgs e)
         {
             //connect
             using (DefaultConnection conn = new DefaultConnection())
@@ -96,13 +107,13 @@ namespace Lefarge_FE_App
                     var c = (from head in conn.Questions
                              where head.Question_ID == QuestionID
                              select head).FirstOrDefault();
-                     
+
                 }
 
                 //fill the properties of our object from the form inputs
 
 
-             
+
                 // Create the list to store.
                 string selectedHeadingValues = null;
                 // Loop through each item.
@@ -115,7 +126,7 @@ namespace Lefarge_FE_App
                     }
                     else
                     {
-                       
+
                     }
 
                 }
@@ -133,7 +144,6 @@ namespace Lefarge_FE_App
                 //redirect to updated departments page
                 Response.Redirect("questionList.aspx");
             }
-
         }
     }
 }

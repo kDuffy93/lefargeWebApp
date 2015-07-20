@@ -190,26 +190,18 @@ namespace Lefarge_FE_App
                     r.Controls.Add(cellDeficency);
                     r.Controls.Add(cellAP);
 
-
-
                     tblSurvey.Controls.Add(r);
-
-
                 }
-
             }
         }
 
         protected void rbl_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             Session["sessionTable"] = tblSurvey;
             RadioButtonList button = (RadioButtonList)sender;
             string buttonId = button.Parent.ID;
             TableCell cell = button.Parent as TableCell;
             TableRow row = cell.Parent as TableRow;
-
-
             foreach (ListItem item in button.Items)
             {
                 if (item.Selected)
@@ -238,21 +230,15 @@ namespace Lefarge_FE_App
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
             Button button = (Button)sender;
-
             TableCell cell = button.Parent as TableCell;
             TableRow row = cell.Parent as TableRow;
             Table table = row.Parent as Table;
-
             foreach (TableRow workingRow in table.Rows)
             {
-
-
-
                 if (workingRow.GetType() == typeof(TableHeaderRow))
                 {
                     continue;
                 }
-
                 else
                 {
                     using (DefaultConnection conn = new DefaultConnection())
@@ -261,10 +247,8 @@ namespace Lefarge_FE_App
                         DateTime dateAndTime = DateTime.Now;
                         // set date completed
                         r.Date_Completed = DateTime.Now;
-
                         //save white equipment it is
                         r.Equipment_ID = Convert.ToInt32(txtEquipment.Text);
-
                         foreach (TableCell currentCell in workingRow.Cells)
                         {
                             if (currentCell == workingRow.Cells[0])
@@ -283,9 +267,7 @@ namespace Lefarge_FE_App
                                 {
                                     continue;
                                 }
-
-
-                                int indexOfNumSign = t.ID.IndexOf("=") + 1;
+                                                                int indexOfNumSign = t.ID.IndexOf("=") + 1;
                                 // set question ID
                                 r.Question_ID = Convert.ToInt32(t.ID.Substring(0, indexOfUnderscore));
                                 //set heading id
@@ -295,22 +277,16 @@ namespace Lefarge_FE_App
                             {
                                 if (control.GetType() == typeof(RadioButtonList))
                                 {
-
                                     RadioButtonList rbl = (RadioButtonList)control;
-
-
                                     if (rbl.SelectedValue == "true")
                                     {
                                         r.Response = true;
                                     }
-
                                     else if (rbl.SelectedValue == "false")
                                     {
                                         r.Response = false;
                                     }
-
                                 } // check control to see if its a rbl
-
                                 if (control.GetType() == typeof(TextBox))
                                 {
                                     TextBox txt = (TextBox)control;
@@ -325,30 +301,17 @@ namespace Lefarge_FE_App
                                 } //checks for txtbox
                             }
                         } //foreach control
-
                         conn.Results.Add(r);
                         conn.SaveChanges();
                     } // checks to see if workign row is not a header row
-
-
                 } //default conn
-
-
             } //for each table row
             btnNewSurvey.Visible = true;
         }
-
-
-
         protected void btnNewSurvey_Click(object sender, EventArgs e)
         {
             Response.Redirect("startSurvey.aspx");
         } // btn submit click close
-
-
-
-
-
     } // partial class close
 } //namespace close
 

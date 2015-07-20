@@ -14,6 +14,7 @@
         <asp:TextBox ID="txtEquipment" runat="server" Enabled="false" Text="0"></asp:TextBox>
             </div>   
         </div> 
+     <asp:Button runat="server" Visible="false" text="Start a new survey" ID="btnNewSurvey" OnClick="btnNewSurvey_Click" CssClass="btn btn-primary"/>
     <div id="srvMain">
         <asp:Table id="tblSurvey"  CssClass="table table-striped" CellPadding="5" CellSpacing="5"
         Gridlines="both" runat="server" border-right-width="1" EnableViewState="true">
@@ -25,5 +26,5 @@
             </asp:TableHeaderRow>
          </asp:Table>
     </div>
-    <asp:Button runat="server" Visible="false" text="Start a new survey" ID="btnNewSurvey" OnClick="btnNewSurvey_Click" CssClass="btn btn-primary"/>
+   
 </asp:Content>

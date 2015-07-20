@@ -40,15 +40,6 @@ namespace Lefarge_FE_App {
         protected global::System.Web.UI.WebControls.TextBox txtEquipment;
         
         /// <summary>
-        /// tblSurvey control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Table tblSurvey;
-        
-        /// <summary>
         /// btnNewSurvey control.
         /// </summary>
         /// <remarks>
@@ -56,5 +47,14 @@ namespace Lefarge_FE_App {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnNewSurvey;
+        
+        /// <summary>
+        /// tblSurvey control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Table tblSurvey;
     }
 }

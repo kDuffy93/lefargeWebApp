@@ -18,7 +18,7 @@
     </div>
     
     <div class="col-sm-offset-3">
-        <asp:Button ID="btnSave" runat="server" Text="Save" OnClick="btnSave_OnClick" CssClass="btn btn-primary"
+        <asp:Button ID="btnSave" runat="server" Text="Save"  OnClick="btnSave_Click" CssClass="btn btn-primary"
              />
     </div>
 </asp:Content>

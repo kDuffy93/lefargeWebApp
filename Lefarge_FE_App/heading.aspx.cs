@@ -43,16 +43,18 @@ namespace Lefarge_FE_App
                 txtHeading.Text = c.Heading1;
               var categoriesUnder =  c.Categories_Under.ToString();
                
-             var allCategories = (from head in conn.Headings
+             var allCategories = (from head in conn.Categories
                          
-                         select head.Heading_ID).ToList();
-
+                         select head.Category_ID).ToList();
+             var catLength = allCategories.Count();
+             int lastID = allCategories[catLength-1];
                 
             
-               for (int i = 0; i < allCategories.Count(); i++)
+               for (int i = 0; i < lastID; i++)
                {
-                   if (categoriesUnder.Contains(i.ToString()))
+                   if (categoriesUnder.Contains((i+1).ToString()))
                    {
+                      
                        chklstCategories.Items[i].Selected = true;
                    }
                }
@@ -96,7 +98,6 @@ namespace Lefarge_FE_App
                     c = (from head in conn.Headings
                          where head.Heading_ID == HeadingID
                          select head).FirstOrDefault();
-
                 }
 
                 //fill the properties of our object from the form inputs
@@ -119,9 +120,14 @@ namespace Lefarge_FE_App
             }
 
         }
-                
-        c.Categories_Under = selectedCategoryValues.ToString();
-
+        try
+        {
+            c.Categories_Under = selectedCategoryValues.ToString();
+        }
+                catch(NullReferenceException n)
+        {
+            c.Categories_Under = "";
+        }
                 if (Request.QueryString.Count == 0)
                 {
                     conn.Headings.Add(c);

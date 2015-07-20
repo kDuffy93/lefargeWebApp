@@ -80,8 +80,10 @@
     <Content Include="category.aspx" />
     <Content Include="equipment.aspx" />
     <Content Include="equipmentList.aspx" />
+    <Content Include="error.aspx" />
     <Content Include="heading.aspx" />
     <Content Include="headings.aspx" />
+    <Content Include="HtmlPage1.html" />
     <Content Include="images\lafarge.jpg" />
     <Content Include="plant.aspx" />
     <Content Include="Lefarge.Master" />
@@ -119,7 +121,9 @@
     <Content Include="startSurvey.aspx" />
     <Content Include="selectEquipment.aspx" />
     <Content Include="survey.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="categories.aspx.cs">
@@ -149,6 +153,13 @@
     </Compile>
     <Compile Include="equipmentList.aspx.designer.cs">
       <DependentUpon>equipmentList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="error.aspx.cs">
+      <DependentUpon>error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="error.aspx.designer.cs">
+      <DependentUpon>error.aspx</DependentUpon>
     </Compile>
     <Compile Include="heading.aspx.cs">
       <DependentUpon>heading.aspx</DependentUpon>
