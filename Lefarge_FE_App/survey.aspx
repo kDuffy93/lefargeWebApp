@@ -13,7 +13,7 @@
         <asp:Label runat="server">selected piece of equipment:</asp:Label>
         <asp:TextBox ID="txtEquipment" runat="server" Enabled="false" Text="0"></asp:TextBox>
             </div> 
-        <div><asp:TextBox ID="txtTimeout" runat="server" enables="false"></asp:TextBox></div>  
+        <div><asp:TextBox ID="txtTimeout" runat="server" enabled="false"></asp:TextBox></div>  
         </div> 
      <asp:Button runat="server" Visible="false" text="Start a new survey" ID="btnNewSurvey" OnClick="btnNewSurvey_Click" CssClass="btn btn-primary"/>
     <div id="srvMain">
