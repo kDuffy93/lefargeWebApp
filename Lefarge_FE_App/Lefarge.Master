@@ -27,6 +27,7 @@
             <li><a rel="external" href="categories.aspx">Categories</a></li>
             <li><a rel="external" href="headings.aspx">Headings</a></li>
             <li><a rel="external" href="questionList.aspx">Questions</a></li>
+            <li><a rel="external" href="startReport.aspx">Generate Reports</a></li>
             </ul>
     </nav>
    

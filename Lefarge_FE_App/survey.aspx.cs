@@ -45,6 +45,7 @@ namespace Lefarge_FE_App
             buildTable();
 
             fillSelections();
+           Response.Write(Session.Timeout);
 
             if (IsPostBack)
             {

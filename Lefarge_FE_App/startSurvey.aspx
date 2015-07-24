@@ -1,8 +1,4 @@
-﻿
-
-
-
-<%@ Page Title="" Language="C#" MasterPageFile="~/Lefarge.Master" AutoEventWireup="true" CodeBehind="startSurvey.aspx.cs" Inherits="Lefarge_FE_App.selectPlant" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Lefarge.Master" AutoEventWireup="true" CodeBehind="startSurvey.aspx.cs" Inherits="Lefarge_FE_App.selectPlant" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="well">
      
