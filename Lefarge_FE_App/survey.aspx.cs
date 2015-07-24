@@ -45,7 +45,7 @@ namespace Lefarge_FE_App
             buildTable();
 
             fillSelections();
-           Response.Write(Session.Timeout);
+         
 
             if (IsPostBack)
             {
@@ -312,6 +312,11 @@ namespace Lefarge_FE_App
         protected void btnNewSurvey_Click(object sender, EventArgs e)
         {
             Response.Redirect("startSurvey.aspx");
+        }
+
+        protected void btnTimeout_Click(object sender, EventArgs e)
+        {
+            txtTimeout.Text = Session.Timeout.ToString();
         } // btn submit click close
     } // partial class close
 } //namespace close
