@@ -84,12 +84,12 @@
   <ItemGroup>
     <Content Include="categories.aspx" />
     <Content Include="category.aspx" />
+    <Content Include="controls\defrib.ascx" />
     <Content Include="equipment.aspx" />
     <Content Include="equipmentList.aspx" />
     <Content Include="error.aspx" />
     <Content Include="heading.aspx" />
     <Content Include="headings.aspx" />
-    <Content Include="HtmlPage1.html" />
     <Content Include="images\lafarge.jpg" />
     <Content Include="plant.aspx" />
     <Content Include="Lefarge.Master" />
@@ -148,6 +148,13 @@
     </Compile>
     <Compile Include="category.aspx.designer.cs">
       <DependentUpon>category.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="controls\defrib.ascx.cs">
+      <DependentUpon>defrib.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="controls\defrib.ascx.designer.cs">
+      <DependentUpon>defrib.ascx</DependentUpon>
     </Compile>
     <Compile Include="equipment.aspx.cs">
       <DependentUpon>equipment.aspx</DependentUpon>

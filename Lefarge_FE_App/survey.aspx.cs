@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -319,5 +319,4 @@ namespace Lefarge_FE_App
             txtTimeout.Text = Session.Timeout.ToString();
         } // btn submit click close
     } // partial class close
-} //namespace close
-
+} //namespace close 
