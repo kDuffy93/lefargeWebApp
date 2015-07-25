@@ -25,11 +25,9 @@ namespace Lefarge_FE_App
         {
              using (DefaultConnection conn = new DefaultConnection())
                     {
- 
                         var equipName = (from q in conn.Equipments
                                             where q.Unit_Number == EquipmentID
                                             select q).FirstOrDefault();
-
                         txtEqID.Text = equipName.Name;
         }
         }
@@ -71,6 +69,19 @@ namespace Lefarge_FE_App
                                            select h).FirstOrDefault();
 
                         dr.Cells[4].Text = tempHeading.Heading1;
+
+                        var response = dr.Cells[1].Text;
+
+                       if(response == "True")
+                       {
+                           dr.Cells[1].Text = "yes";
+
+                       }
+                       else if(response == "False")
+                       {
+                           dr.Cells[1].Text = "no";
+                       }
+                       
                     }
             }
         }
