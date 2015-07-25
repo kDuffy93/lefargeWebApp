@@ -11,7 +11,7 @@ namespace Lefarge_FE_App
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Response.AddHeader("Refresh", Convert.ToString((10 * 60) - 30));
+            Response.AddHeader("Refresh", Convert.ToString((Session.Timeout * 60) - 30));
         }
     }
 }
