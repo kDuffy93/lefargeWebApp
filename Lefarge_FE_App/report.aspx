@@ -2,9 +2,12 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="well">
         <h3>Report for:</h3>
-
+        <asp:Label runat="server" For="txtEqUn">Unit #</asp:Label>
+          <asp:TextBox ID="txtEqUn" runat="server" Enabled="false"></asp:TextBox>
+         <asp:Label runat="server" For="txtEqID">Unit #</asp:Label>
         <asp:TextBox ID="txtEqID" runat="server" Enabled="false"></asp:TextBox>
     </div>
+    <asp:DropDownList runat="server" ID="ddlDates" AutoPostBack="true"   OnSelectedIndexChanged="ddlDates_SelectedIndexChanged" OnDataBinding="ddlDates_DataBinding"></asp:DropDownList>
     <asp:GridView ID="grdResults" runat="server" CssClass="table table-striped"
         AutoGenerateColumns="False"
         DataKeyNames="ID"  OnRowDataBound="grdResults_RowDataBound" >

@@ -15,12 +15,31 @@ namespace Lefarge_FE_App
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            getReport();
+           
             Int32 EquipmentID = Convert.ToInt32(Request.QueryString["selectedEquipment"]);
             txtEqID.Text = EquipmentID.ToString();
+            txtEqUn.Text = EquipmentID.ToString();
             convertIDtoValue(EquipmentID);
+            getReport(EquipmentID);
+            selectDate(EquipmentID);
         }
+        protected void selectDate(int EquipmentID)
+    {
+        using (DefaultConnection conn = new DefaultConnection())
+                    {
+                        var possibleDates = (from r in conn.Results
+                                             where r.Equipment_ID == EquipmentID
+                                             select r.Date_Completed).Distinct().ToList();
 
+
+            
+            
+       ddlDates.DataSource = possibleDates;
+                ddlDates.DataBind();
+            
+      
+        }
+    }
         protected void convertIDtoValue(int EquipmentID)
         {
              using (DefaultConnection conn = new DefaultConnection())
@@ -29,14 +48,16 @@ namespace Lefarge_FE_App
                                             where q.Unit_Number == EquipmentID
                                             select q).FirstOrDefault();
                         txtEqID.Text = equipName.Name;
+
         }
         }
-        protected void getReport()
+        protected void getReport(int EquipmentID)
         {
             using (DefaultConnection conn = new DefaultConnection())
             {
                 //use link to query the Departments model
                 var result = from r in conn.Results
+                             where r.Equipment_ID == EquipmentID
                             select r;
                 //bind the query result to the gridview
                 grdResults.DataSource = result.ToList();
@@ -86,5 +107,26 @@ namespace Lefarge_FE_App
             }
         }
 
+        protected void ddlDates_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var a = sender as RadioButtonList;
+            
+        }
+
+        protected void ddlDates_DataBinding(object sender, EventArgs e)
+        {
+            var b = sender as RadioButtonList;
+           // var firstDate = b.SelectedValue;
+
+          /* foreach (DataRow dr in grdResults.Rows)
+            {
+               if(!(dr[5].Text.Contains(firstDate)))
+               {
+                   grdResults.Rows.Remove(dr);
+               }
+               
+            }*/
+        }
+    
     }
 }

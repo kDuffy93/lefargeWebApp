@@ -13,6 +13,15 @@ namespace Lefarge_FE_App {
     public partial class report {
         
         /// <summary>
+        /// txtEqUn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtEqUn;
+        
+        /// <summary>
         /// txtEqID control.
         /// </summary>
         /// <remarks>
@@ -20,6 +29,15 @@ namespace Lefarge_FE_App {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtEqID;
+        
+        /// <summary>
+        /// ddlDates control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlDates;
         
         /// <summary>
         /// grdResults control.

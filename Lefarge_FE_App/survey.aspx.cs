@@ -234,6 +234,7 @@ namespace Lefarge_FE_App
             TableCell cell = button.Parent as TableCell;
             TableRow row = cell.Parent as TableRow;
             Table table = row.Parent as Table;
+            DateTime dateAndTime = DateTime.Now;
             foreach (TableRow workingRow in table.Rows)
             {
                 if (workingRow.GetType() == typeof(TableHeaderRow))
@@ -245,9 +246,9 @@ namespace Lefarge_FE_App
                     using (DefaultConnection conn = new DefaultConnection())
                     {
                         Result r = new Result();
-                        DateTime dateAndTime = DateTime.Now;
+                        
                         // set date completed
-                        r.Date_Completed = DateTime.Now;
+                        r.Date_Completed = dateAndTime;
                         //save white equipment it is
                         r.Equipment_ID = Convert.ToInt32(txtEquipment.Text);
                         foreach (TableCell currentCell in workingRow.Cells)
