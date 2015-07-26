@@ -7,7 +7,7 @@
     <h6>Both Required</h6>
     <div class="form-group">
         <label for="txtHeading" class="col-sm-3">Heading:</label>
-        <asp:TextBox ID="txtHeading" runat="server" required="true" MaxLength="30" />
+        <asp:TextBox ID="txtHeading" runat="server" required="true" MaxLength="30" /><asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="This heading needs a name" ControlToValidate="txtHeading" CssClass="alert alert-danger"></asp:RequiredFieldValidator>
     </div>
     
      <div class="form-group">

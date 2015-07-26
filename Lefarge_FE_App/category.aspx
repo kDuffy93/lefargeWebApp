@@ -10,6 +10,7 @@
     <div class="form-group">
         <label for="txtCategory" class="col-sm-3">Category:</label>
         <asp:TextBox ID="txtCategory" runat="server" required="true" MaxLength="25" />
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Category is required" CssClass="alert alert-danger" ControlToValidate="txtCategory"></asp:RequiredFieldValidator>
     </div>
     
     <div class="col-sm-offset-3">

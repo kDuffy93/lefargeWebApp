@@ -2,16 +2,16 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <h1>Equipment Details</h1>
 
-    <h5>Unit number,Name, are Required</h5>
-     <h5>All other fields are optional</h5>
+    
 
     <div class="form-group">
         <label for="txtUnitNumber" class="col-sm-3">Unit Number</label>
-        <asp:TextBox ID="txtUnitNumber" runat="server" required="true" MaxLength="20" />
+        <asp:TextBox ID="txtUnitNumber" runat="server" required="true" MaxLength="20" /><asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Please input a unit number" ControlToValidate="txtUnitNumber" CssClass="alert alert-danger" Display="Dynamic"></asp:RequiredFieldValidator>
     </div>
     <div class="form-group">
         <label for="txtName" class="col-sm-3">Name:</label>
         <asp:TextBox ID="txtName" runat="server"  MaxLength="50"  required="true"/>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Give this piece of equipment a name" ControlToValidate="txtName" CssClass="alert alert-danger" Display="Dynamic"></asp:RequiredFieldValidator>
     </div>
     <div class="form-group">
         <label for="txtDescription1" class="col-sm-3">Description</label>
@@ -20,10 +20,13 @@
     <div class="form-group">
         <label for="txtNumOfBelts" class="col-sm-3">Number of Belts:</label>
         <asp:TextBox ID="txtNumOfBelts" runat="server" required="true" MaxLength="7" />
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Number of belts is Required" ControlToValidate="txtNumOfBelts" CssClass="alert alert-danger"  Display="Dynamic"></asp:RequiredFieldValidator>
+        <asp:RangeValidator ID="RangeValidator1" runat="server" ErrorMessage="Number of belts must be a numeric value between 1 and 999" MaximumValue="999" MinimumValue="1"  ControlToValidate="txtNumOfBelts" CssClass="btn btn-xs btn-danger" Display="Dynamic"></asp:RangeValidator>
     </div>
      <div class="form-group">
         <label for="txtBeltType" class="col-sm-3">Belt Type:</label>
         <asp:TextBox ID="txtBeltType" runat="server" required="true" MaxLength="7" />
+         <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Belt type is required" ControlToValidate="txtBeltType" CssClass="alert alert-danger"></asp:RequiredFieldValidator>
     </div>
    
     <div class="form-group">

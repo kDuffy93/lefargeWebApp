@@ -9,7 +9,7 @@
 
     <div class="form-group">
         <label for="txtPlantName" class="col-sm-3">Plant Name:</label>
-        <asp:TextBox ID="txtPlantName" runat="server" required="true" MaxLength="20" />
+        <asp:TextBox ID="txtPlantName" runat="server" required="true" MaxLength="20" /><asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Plant name is required" CssClass="alert alert-danger" ControlToValidate="txtPlantName"></asp:RequiredFieldValidator>
     </div>
     <div class="form-group">
         <label for="txtAddress" class="col-sm-3">Address:</label>

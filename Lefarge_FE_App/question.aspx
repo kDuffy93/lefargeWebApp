@@ -6,7 +6,7 @@
     <h6></h6>
     <div class="form-group">
         <label for="txtQuestion" class="col-sm-3">Question:</label>
-        <asp:TextBox ID="txtQuestion" runat="server" required="true" MaxLength="250" />
+        <asp:TextBox ID="txtQuestion" runat="server" required="true" MaxLength="250" /><asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="A question is required"  CssClass="alert alert-danger" ControlToValidate="txtQuestion"></asp:RequiredFieldValidator>
     </div>
     
      <div class="form-group">
