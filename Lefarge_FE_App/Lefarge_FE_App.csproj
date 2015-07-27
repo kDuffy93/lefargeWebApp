@@ -119,7 +119,7 @@
     <Content Include="controls\defrib.ascx" />
     <Content Include="admin\equipment.aspx" />
     <Content Include="admin\equipmentList.aspx" />
-    <Content Include="admin\error.aspx" />
+    <Content Include="error.aspx" />
     <Content Include="admin\heading.aspx" />
     <Content Include="admin\headings.aspx" />
     <Content Include="images\lafarge.jpg" />
@@ -160,9 +160,9 @@
     <Content Include="admin\question.aspx" />
     <Content Include="admin\questionList.aspx" />
     <Content Include="register.aspx" />
-    <Content Include="report.aspx" />
-    <Content Include="selectResults.aspx" />
-    <Content Include="startReport.aspx" />
+    <Content Include="admin\report.aspx" />
+    <Content Include="admin\selectResults.aspx" />
+    <Content Include="admin\startReport.aspx" />
     <Content Include="admin\startSurvey.aspx" />
     <Content Include="admin\selectEquipment.aspx" />
     <Content Include="admin\survey.aspx" />
@@ -214,11 +214,11 @@
     <Compile Include="admin\equipmentList.aspx.designer.cs">
       <DependentUpon>equipmentList.aspx</DependentUpon>
     </Compile>
-    <Compile Include="admin\error.aspx.cs">
+    <Compile Include="error.aspx.cs">
       <DependentUpon>error.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="admin\error.aspx.designer.cs">
+    <Compile Include="error.aspx.designer.cs">
       <DependentUpon>error.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\heading.aspx.cs">
@@ -355,25 +355,25 @@
     <Compile Include="register.aspx.designer.cs">
       <DependentUpon>register.aspx</DependentUpon>
     </Compile>
-    <Compile Include="report.aspx.cs">
+    <Compile Include="admin\report.aspx.cs">
       <DependentUpon>report.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="report.aspx.designer.cs">
+    <Compile Include="admin\report.aspx.designer.cs">
       <DependentUpon>report.aspx</DependentUpon>
     </Compile>
-    <Compile Include="selectResults.aspx.cs">
+    <Compile Include="admin\selectResults.aspx.cs">
       <DependentUpon>selectResults.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="selectResults.aspx.designer.cs">
+    <Compile Include="admin\selectResults.aspx.designer.cs">
       <DependentUpon>selectResults.aspx</DependentUpon>
     </Compile>
-    <Compile Include="startReport.aspx.cs">
+    <Compile Include="admin\startReport.aspx.cs">
       <DependentUpon>startReport.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="startReport.aspx.designer.cs">
+    <Compile Include="admin\startReport.aspx.designer.cs">
       <DependentUpon>startReport.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\startSurvey.aspx.cs">
