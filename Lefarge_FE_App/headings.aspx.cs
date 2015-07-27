@@ -13,6 +13,7 @@ namespace Lefarge_FE_App
  
         protected void Page_Load(object sender, EventArgs e)
         {
+          
             if (!IsPostBack)
             {
                 GetHeading();

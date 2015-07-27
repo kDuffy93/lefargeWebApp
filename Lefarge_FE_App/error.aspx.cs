@@ -11,12 +11,9 @@ namespace Lefarge_FE_App
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            getError(Session["Error"].ToString());
+          
         }
 
-        protected void getError(string error)
-        {
-            txtError.Text = error;
-        }
+        
     }
 }

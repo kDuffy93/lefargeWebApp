@@ -82,6 +82,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="404.aspx" />
     <Content Include="categories.aspx" />
     <Content Include="category.aspx" />
     <Content Include="controls\defrib.ascx" />
@@ -130,11 +131,19 @@
     <Content Include="startSurvey.aspx" />
     <Content Include="selectEquipment.aspx" />
     <Content Include="survey.aspx" />
+    <Content Include="triggerError.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="404.aspx.cs">
+      <DependentUpon>404.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="404.aspx.designer.cs">
+      <DependentUpon>404.aspx</DependentUpon>
+    </Compile>
     <Compile Include="categories.aspx.cs">
       <DependentUpon>categories.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -324,6 +333,13 @@
     </Compile>
     <Compile Include="survey.aspx.designer.cs">
       <DependentUpon>survey.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="triggerError.aspx.cs">
+      <DependentUpon>triggerError.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="triggerError.aspx.designer.cs">
+      <DependentUpon>triggerError.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

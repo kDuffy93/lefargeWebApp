@@ -10,6 +10,6 @@
 namespace Lefarge_FE_App {
     
     
-    public partial class error {
+    public partial class _404 {
     }
 }

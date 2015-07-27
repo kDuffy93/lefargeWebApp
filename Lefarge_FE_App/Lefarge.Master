@@ -33,6 +33,7 @@
             <li><a rel="external" href="headings.aspx">Headings</a></li>
             <li><a rel="external" href="questionList.aspx">Questions</a></li>
             <li><a rel="external" href="startReport.aspx">Generate Reports</a></li>
+            <li><a rel="external" href="triggerError.aspx">Throw Non-404 Error For Testing</a></li>
             </ul>
     </nav>
    

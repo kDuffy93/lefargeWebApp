@@ -4,6 +4,10 @@ using System.Linq;
 using System.Web;
 using System.Web.Security;
 using System.Web.SessionState;
+using System.Data.Entity;
+using Lefarge_FE_App.Models;
+
+using System.Net.Mail;
 
 namespace Lefarge_FE_App
 {
@@ -15,7 +19,37 @@ namespace Lefarge_FE_App
         }
         protected void Session_start(object sender, EventArgs e)
         {
-           
+            Session["startTime"] = DateTime.Now;
+        }
+        protected void Application_Error(object sender, EventArgs e)
+        {
+        
+
+          
+            HttpException objError = Server.GetLastError() as HttpException;
+          
+            
+            if (objError.GetHttpCode() == 404)
+            {
+                Server.Transfer("/404.aspx");
+                return;
+            }
+
+          /*  //email the error
+            MailMessage objMail = new MailMessage();
+
+            objMail.Subject = "BrechinFES ERROR";
+            objMail.Body = "Type: " + objError.GetType() + "<br />Source: " + objError.Source + "<br />Message: " + objError.Message + "<br />StackTrace: " + objError.StackTrace;
+            objMail.From = new MailAddress("support@lafargefes.mail");
+            objMail.To.Add("kyleduffy83@gmail.com");
+            objMail.IsBodyHtml = true;
+
+            SmtpClient objClient = new SmtpClient();
+            objClient.Send(objMail);
+           * */
+
+            Server.ClearError();
+            Response.Redirect("/error.aspx");
         }
        
     }
