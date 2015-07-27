@@ -27,7 +27,7 @@ namespace Lefarge_FE_App
 
           
             HttpException objError = Server.GetLastError() as HttpException;
-          
+             
              
             if (objError.GetHttpCode() == 404)
             {
