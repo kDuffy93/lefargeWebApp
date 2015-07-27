@@ -10,7 +10,7 @@ namespace Lefarge_FE_App.Models
     using System.Data.Entity.Infrastructure;
     using System.Data.Entity.Validation;
     
-    public partial class DefaultConnection : DbContext
+    public partial class DefaultConnectionEF : DbContext
     {
         public override int SaveChanges()
         {

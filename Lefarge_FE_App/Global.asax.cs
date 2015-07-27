@@ -17,10 +17,7 @@ namespace Lefarge_FE_App
         {
    
         }
-        protected void Session_start(object sender, EventArgs e)
-        {
-            Session["startTime"] = DateTime.Now;
-        }
+      
         protected void Application_Error(object sender, EventArgs e)
         {
         

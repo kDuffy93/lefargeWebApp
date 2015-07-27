@@ -20,7 +20,7 @@ namespace Lefarge_FE_App
         }
         protected void getQuestion()
         {
-            using (DefaultConnection conn = new DefaultConnection())
+            using (DefaultConnectionEF conn = new DefaultConnectionEF())
             {
                 var questions = from q in conn.Questions
                            select q;
@@ -33,7 +33,7 @@ namespace Lefarge_FE_App
         }
         protected void grdQuestions_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-            using (DefaultConnection conn = new DefaultConnection())
+            using (DefaultConnectionEF conn = new DefaultConnectionEF())
             {
                 //get the selected DepartmentID
                 Int32 QuestionID = Convert.ToInt32(grdQuestions.DataKeys[e.RowIndex].Values["Question_ID"]);

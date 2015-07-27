@@ -29,7 +29,7 @@ namespace Lefarge_FE_App
         {
 
             //connect using our connection string from web.config and EF context class
-            using (DefaultConnection conn = new DefaultConnection())
+            using (DefaultConnectionEF conn = new DefaultConnectionEF())
             {
 
                 //use link to query the Departments model
@@ -53,7 +53,7 @@ namespace Lefarge_FE_App
         protected void grdEquipment_OnDataBound(object sender, EventArgs d)
         {
            
-                using (DefaultConnection conn = new DefaultConnection())
+                using (DefaultConnectionEF conn = new DefaultConnectionEF())
                 {
 
                 

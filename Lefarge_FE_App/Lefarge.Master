@@ -25,15 +25,21 @@
   <nav class="nav navbar-default">
        
         <ul class="nav navbar-nav">
-            <li> <a href="default.aspx"> <asp:Image runat="server"  rel="external" ImageUrl="images/lafarge.jpg" PostBackUrl="~/default.aspx" AlternateText="Lafarge Home"/></a></li>
-            <li><a rel="external" href="startSurvey.aspx">Start Survey</a></li>
-            <li><a rel="external" href="plants.aspx">Plant</a></li>
-            <li><a rel="external" href="equipmentList.aspx">Equipment</a></li>
-            <li><a rel="external" href="categories.aspx">Categories</a></li>
-            <li><a rel="external" href="headings.aspx">Headings</a></li>
-            <li><a rel="external" href="questionList.aspx">Questions</a></li>
-            <li><a rel="external" href="startReport.aspx">Generate Reports</a></li>
-            <li><a rel="external" href="triggerError.aspx">Throw Non-404 Error For Testing</a></li>
+            <li> <a href="/admin/default.aspx"> <asp:Image runat="server"  rel="external" ImageUrl="images/lafarge.jpg" PostBackUrl="~/default.aspx" AlternateText="Lafarge Home"/></a></li>
+            <asp:PlaceHolder runat="server" ID="plhPublic">
+            <li><a rel="external" href="register.aspx">Register</a></li>
+             <li><a rel="external" href="login.aspx">Log in</a></li></asp:PlaceHolder>
+            <asp:PlaceHolder runat="server" id="plhPrivate">
+            
+            <li><a rel="external" href="/admin/startSurvey.aspx">Start Survey</a></li>
+            <li><a rel="external" href="/admin/plants.aspx">Plant</a></li>
+            <li><a rel="external" href="/admin/equipmentList.aspx">Equipment</a></li>
+            <li><a rel="external" href="/admin/categories.aspx">Categories</a></li>
+            <li><a rel="external" href="/admin/headings.aspx">Headings</a></li>
+            <li><a rel="external" href="/admin/questionList.aspx">Questions</a></li>
+            <li><a rel="external" href="/admin/startReport.aspx">Generate Reports</a></li>
+            <li><a rel="external" href="/admin/triggerError.aspx">Throw Non-404 Error For Testing</a></li>
+            <li><a rel="external" href="logout.aspx">Log out</a></li></asp:PlaceHolder>
             </ul>
     </nav>
    

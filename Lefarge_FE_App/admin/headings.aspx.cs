@@ -23,7 +23,7 @@ namespace Lefarge_FE_App
         {
 
             //connect using our connection string from web.config and EF context class
-            using (DefaultConnection conn = new DefaultConnection())
+            using (DefaultConnectionEF conn = new DefaultConnectionEF())
             {
                 //use link to query the Departments model
                 var  head = from c in conn.Headings
@@ -37,7 +37,7 @@ namespace Lefarge_FE_App
         protected void grdHeadings_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
             //connect
-            using (DefaultConnection conn = new DefaultConnection())
+            using (DefaultConnectionEF conn = new DefaultConnectionEF())
             {
                 //get the selected DepartmentID
                 Int32 HeadingID = Convert.ToInt32(grdHeadings.DataKeys[e.RowIndex].Values["Heading_ID"]);

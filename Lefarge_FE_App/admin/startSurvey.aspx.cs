@@ -25,7 +25,7 @@ fillDropDowns();
 
         protected void fillDropDowns()
         {
-            using (DefaultConnection conn = new DefaultConnection())
+            using (DefaultConnectionEF conn = new DefaultConnectionEF())
             {
              //create a list the holds the plants table
                 var p = (from plnt in conn.Plants

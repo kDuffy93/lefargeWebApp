@@ -27,7 +27,7 @@ namespace Lefarge_FE_App
         protected void GetPlant()
         {
             //connect
-            using (DefaultConnection conn = new DefaultConnection())
+            using (DefaultConnectionEF conn = new DefaultConnectionEF())
             {
                 //get id from url parameter and store in a variable
                 Int32 plantID = Convert.ToInt32(Request.QueryString["Plant_ID"]);
@@ -50,7 +50,7 @@ namespace Lefarge_FE_App
         {
            
                 //connect
-                using (DefaultConnection conn = new DefaultConnection())
+                using (DefaultConnectionEF conn = new DefaultConnectionEF())
                 {
                     //instantiate a new deparment object in memory
                     Plant d = new Plant();

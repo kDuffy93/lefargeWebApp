@@ -30,7 +30,7 @@ namespace Lefarge_FE_App
         protected void GetHeading()
         {
             //connect
-            using (DefaultConnection conn = new DefaultConnection())
+            using (DefaultConnectionEF conn = new DefaultConnectionEF())
             {
                 //get id from url parameter and store in a variable
                 Int32 HeadingID = Convert.ToInt32(Request.QueryString["Heading_ID"]);
@@ -63,7 +63,7 @@ namespace Lefarge_FE_App
 
         protected void fillDropDown()
         {
-            using (DefaultConnection conn = new DefaultConnection())
+            using (DefaultConnectionEF conn = new DefaultConnectionEF())
             {
                 var c = (from cat in conn.Categories
                    
@@ -85,7 +85,7 @@ namespace Lefarge_FE_App
         protected void btnSave_OnClick(object sender, EventArgs e)
         {
             //connect
-            using (DefaultConnection conn = new DefaultConnection())
+            using (DefaultConnectionEF conn = new DefaultConnectionEF())
             {
                 //instantiate a new deparment object in memory
                 Heading c = new Heading();

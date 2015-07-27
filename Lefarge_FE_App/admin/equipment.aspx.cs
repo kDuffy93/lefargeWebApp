@@ -28,7 +28,7 @@ namespace Lefarge_FE_App
         protected void getEquipmentList()
         {
             //connect
-            using (DefaultConnection conn = new DefaultConnection())
+            using (DefaultConnectionEF conn = new DefaultConnectionEF())
             {
                 //get id from url parameter and store in a variable
                 Int32 EquipmentID = Convert.ToInt32(Request.QueryString["Equipment_ID"]);
@@ -50,7 +50,7 @@ namespace Lefarge_FE_App
         }
         protected void fillDropDowns()
         {
-            using (DefaultConnection conn = new DefaultConnection())
+            using (DefaultConnectionEF conn = new DefaultConnectionEF())
             {
                 //create a list the holds the plants table
                 var p = (from plnt in conn.Plants
@@ -76,7 +76,7 @@ namespace Lefarge_FE_App
         {
 
             //connect
-            using (DefaultConnection conn = new DefaultConnection())
+            using (DefaultConnectionEF conn = new DefaultConnectionEF())
             {
                 //instantiate a new deparment object in memory
                 Equipment a = new Equipment();

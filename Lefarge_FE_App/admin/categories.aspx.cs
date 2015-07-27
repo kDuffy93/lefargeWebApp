@@ -21,7 +21,7 @@ namespace Lefarge_FE_App
         {
 
             //connect using our connection string from web.config and EF context class
-            using (DefaultConnection conn = new DefaultConnection())
+            using (DefaultConnectionEF conn = new DefaultConnectionEF())
             {
                 //use link to query the Departments model
                 var cat = from c in conn.Categories
@@ -35,7 +35,7 @@ namespace Lefarge_FE_App
         protected void grdCategories_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
             //connect
-            using (DefaultConnection conn = new DefaultConnection())
+            using (DefaultConnectionEF conn = new DefaultConnectionEF())
             {
                 //get the selected DepartmentID
                 Int32 CategoryID = Convert.ToInt32(grdCategories.DataKeys[e.RowIndex].Values["Category_ID"]);

@@ -55,9 +55,40 @@
     <Reference Include="Junior.Ddd.Validation">
       <HintPath>..\packages\JuniorDDD.Validation.3.0.0\lib\net40\Junior.Ddd.Validation.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.2.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.2.1.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.2.1.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Web.RedisSessionStateProvider">
       <HintPath>..\packages\Microsoft.Web.RedisSessionStateProvider.1.6.4\lib\net40\Microsoft.Web.RedisSessionStateProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
     </Reference>
     <Reference Include="StackExchange.Redis.StrongName">
       <HintPath>..\packages\StackExchange.Redis.StrongName.1.0.450\lib\net45\StackExchange.Redis.StrongName.dll</HintPath>
@@ -83,18 +114,21 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="404.aspx" />
-    <Content Include="categories.aspx" />
-    <Content Include="category.aspx" />
+    <Content Include="admin\categories.aspx" />
+    <Content Include="admin\category.aspx" />
     <Content Include="controls\defrib.ascx" />
-    <Content Include="equipment.aspx" />
-    <Content Include="equipmentList.aspx" />
-    <Content Include="error.aspx" />
-    <Content Include="heading.aspx" />
-    <Content Include="headings.aspx" />
+    <Content Include="admin\equipment.aspx" />
+    <Content Include="admin\equipmentList.aspx" />
+    <Content Include="admin\error.aspx" />
+    <Content Include="admin\heading.aspx" />
+    <Content Include="admin\headings.aspx" />
     <Content Include="images\lafarge.jpg" />
-    <Content Include="plant.aspx" />
+    <Content Include="login.aspx" />
+    <Content Include="admin\logout.aspx" />
+    <Content Include="admin\main.aspx" />
+    <Content Include="admin\plant.aspx" />
     <Content Include="Lefarge.Master" />
-    <Content Include="plants.aspx" />
+    <Content Include="admin\plants.aspx" />
     <Content Include="packages.config" />
     <EntityDeploy Include="Models\lefarge.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -121,17 +155,18 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="default.aspx" />
+    <Content Include="admin\default.aspx" />
     <Content Include="Global.asax" />
-    <Content Include="question.aspx" />
-    <Content Include="questionList.aspx" />
+    <Content Include="admin\question.aspx" />
+    <Content Include="admin\questionList.aspx" />
+    <Content Include="register.aspx" />
     <Content Include="report.aspx" />
     <Content Include="selectResults.aspx" />
     <Content Include="startReport.aspx" />
-    <Content Include="startSurvey.aspx" />
-    <Content Include="selectEquipment.aspx" />
-    <Content Include="survey.aspx" />
-    <Content Include="triggerError.aspx" />
+    <Content Include="admin\startSurvey.aspx" />
+    <Content Include="admin\selectEquipment.aspx" />
+    <Content Include="admin\survey.aspx" />
+    <Content Include="admin\triggerError.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -144,18 +179,18 @@
     <Compile Include="404.aspx.designer.cs">
       <DependentUpon>404.aspx</DependentUpon>
     </Compile>
-    <Compile Include="categories.aspx.cs">
+    <Compile Include="admin\categories.aspx.cs">
       <DependentUpon>categories.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="categories.aspx.designer.cs">
+    <Compile Include="admin\categories.aspx.designer.cs">
       <DependentUpon>categories.aspx</DependentUpon>
     </Compile>
-    <Compile Include="category.aspx.cs">
+    <Compile Include="admin\category.aspx.cs">
       <DependentUpon>category.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="category.aspx.designer.cs">
+    <Compile Include="admin\category.aspx.designer.cs">
       <DependentUpon>category.aspx</DependentUpon>
     </Compile>
     <Compile Include="controls\defrib.ascx.cs">
@@ -165,40 +200,61 @@
     <Compile Include="controls\defrib.ascx.designer.cs">
       <DependentUpon>defrib.ascx</DependentUpon>
     </Compile>
-    <Compile Include="equipment.aspx.cs">
+    <Compile Include="admin\equipment.aspx.cs">
       <DependentUpon>equipment.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="equipment.aspx.designer.cs">
+    <Compile Include="admin\equipment.aspx.designer.cs">
       <DependentUpon>equipment.aspx</DependentUpon>
     </Compile>
-    <Compile Include="equipmentList.aspx.cs">
+    <Compile Include="admin\equipmentList.aspx.cs">
       <DependentUpon>equipmentList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="equipmentList.aspx.designer.cs">
+    <Compile Include="admin\equipmentList.aspx.designer.cs">
       <DependentUpon>equipmentList.aspx</DependentUpon>
     </Compile>
-    <Compile Include="error.aspx.cs">
+    <Compile Include="admin\error.aspx.cs">
       <DependentUpon>error.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="error.aspx.designer.cs">
+    <Compile Include="admin\error.aspx.designer.cs">
       <DependentUpon>error.aspx</DependentUpon>
     </Compile>
-    <Compile Include="heading.aspx.cs">
+    <Compile Include="admin\heading.aspx.cs">
       <DependentUpon>heading.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="heading.aspx.designer.cs">
+    <Compile Include="admin\heading.aspx.designer.cs">
       <DependentUpon>heading.aspx</DependentUpon>
     </Compile>
-    <Compile Include="headings.aspx.cs">
+    <Compile Include="admin\headings.aspx.cs">
       <DependentUpon>headings.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="headings.aspx.designer.cs">
+    <Compile Include="admin\headings.aspx.designer.cs">
       <DependentUpon>headings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\logout.aspx.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\logout.aspx.designer.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\main.aspx.cs">
+      <DependentUpon>main.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\main.aspx.designer.cs">
+      <DependentUpon>main.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\Action_Plan.cs">
       <DependentUpon>lefarge.tt</DependentUpon>
@@ -231,25 +287,25 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>lefarge.edmx</DependentUpon>
     </Compile>
-    <Compile Include="plant.aspx.cs">
+    <Compile Include="admin\plant.aspx.cs">
       <DependentUpon>plant.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="plant.aspx.designer.cs">
+    <Compile Include="admin\plant.aspx.designer.cs">
       <DependentUpon>plant.aspx</DependentUpon>
     </Compile>
-    <Compile Include="plants.aspx.cs">
+    <Compile Include="admin\plants.aspx.cs">
       <DependentUpon>plants.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="plants.aspx.designer.cs">
+    <Compile Include="admin\plants.aspx.designer.cs">
       <DependentUpon>plants.aspx</DependentUpon>
     </Compile>
-    <Compile Include="default.aspx.cs">
+    <Compile Include="admin\default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="default.aspx.designer.cs">
+    <Compile Include="admin\default.aspx.designer.cs">
       <DependentUpon>default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
@@ -278,19 +334,26 @@
     <Compile Include="Models\Result.cs">
       <DependentUpon>lefarge.tt</DependentUpon>
     </Compile>
-    <Compile Include="question.aspx.cs">
+    <Compile Include="admin\question.aspx.cs">
       <DependentUpon>question.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="question.aspx.designer.cs">
+    <Compile Include="admin\question.aspx.designer.cs">
       <DependentUpon>question.aspx</DependentUpon>
     </Compile>
-    <Compile Include="questionList.aspx.cs">
+    <Compile Include="admin\questionList.aspx.cs">
       <DependentUpon>questionList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="questionList.aspx.designer.cs">
+    <Compile Include="admin\questionList.aspx.designer.cs">
       <DependentUpon>questionList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="register.aspx.cs">
+      <DependentUpon>register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="register.aspx.designer.cs">
+      <DependentUpon>register.aspx</DependentUpon>
     </Compile>
     <Compile Include="report.aspx.cs">
       <DependentUpon>report.aspx</DependentUpon>
@@ -313,32 +376,33 @@
     <Compile Include="startReport.aspx.designer.cs">
       <DependentUpon>startReport.aspx</DependentUpon>
     </Compile>
-    <Compile Include="startSurvey.aspx.cs">
+    <Compile Include="admin\startSurvey.aspx.cs">
       <DependentUpon>startSurvey.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="startSurvey.aspx.designer.cs">
+    <Compile Include="admin\startSurvey.aspx.designer.cs">
       <DependentUpon>startSurvey.aspx</DependentUpon>
     </Compile>
-    <Compile Include="selectEquipment.aspx.cs">
+    <Compile Include="admin\selectEquipment.aspx.cs">
       <DependentUpon>selectEquipment.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="selectEquipment.aspx.designer.cs">
+    <Compile Include="admin\selectEquipment.aspx.designer.cs">
       <DependentUpon>selectEquipment.aspx</DependentUpon>
     </Compile>
-    <Compile Include="survey.aspx.cs">
+    <Compile Include="Startup.cs" />
+    <Compile Include="admin\survey.aspx.cs">
       <DependentUpon>survey.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="survey.aspx.designer.cs">
+    <Compile Include="admin\survey.aspx.designer.cs">
       <DependentUpon>survey.aspx</DependentUpon>
     </Compile>
-    <Compile Include="triggerError.aspx.cs">
+    <Compile Include="admin\triggerError.aspx.cs">
       <DependentUpon>triggerError.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="triggerError.aspx.designer.cs">
+    <Compile Include="admin\triggerError.aspx.designer.cs">
       <DependentUpon>triggerError.aspx</DependentUpon>
     </Compile>
   </ItemGroup>

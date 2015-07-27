@@ -25,7 +25,7 @@ namespace Lefarge_FE_App
         }
         protected void selectDate(int EquipmentID)
     {
-        using (DefaultConnection conn = new DefaultConnection())
+        using (DefaultConnectionEF conn = new DefaultConnectionEF())
                     {
                         var possibleDates = (from r in conn.Results
                                              where r.Equipment_ID == EquipmentID
@@ -42,7 +42,7 @@ namespace Lefarge_FE_App
     }
         protected void convertIDtoValue(int EquipmentID)
         {
-             using (DefaultConnection conn = new DefaultConnection())
+             using (DefaultConnectionEF conn = new DefaultConnectionEF())
                     {
                         var equipName = (from q in conn.Equipments
                                             where q.Unit_Number == EquipmentID
@@ -53,7 +53,7 @@ namespace Lefarge_FE_App
         }
         protected void getReport(int EquipmentID)
         {
-            using (DefaultConnection conn = new DefaultConnection())
+            using (DefaultConnectionEF conn = new DefaultConnectionEF())
             {
                 //use link to query the Departments model
                 var result = from r in conn.Results
@@ -73,7 +73,7 @@ namespace Lefarge_FE_App
                 GridViewRow dr = e.Row as GridViewRow;
                 
                 
-                    using (DefaultConnection conn = new DefaultConnection())
+                    using (DefaultConnectionEF conn = new DefaultConnectionEF())
                     {
                         Int32 qID = Convert.ToInt32(dr.Cells[0].Text);
 

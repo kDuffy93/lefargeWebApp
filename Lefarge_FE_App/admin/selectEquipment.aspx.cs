@@ -34,7 +34,7 @@ namespace Lefarge_FE_App
 
         private void fillBtnPnl()
         {
-            using (DefaultConnection conn = new DefaultConnection())
+            using (DefaultConnectionEF conn = new DefaultConnectionEF())
             {
                 var SelectedPlant = Convert.ToInt32(Session["selectedPlant"]);
                 var SelectedCategory = Convert.ToInt32(Session["selectedCategory"]);

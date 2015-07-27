@@ -67,7 +67,7 @@ namespace Lefarge_FE_App
         }
         protected void buildTable()
         {
-            using (DefaultConnection conn = new DefaultConnection())
+            using (DefaultConnectionEF conn = new DefaultConnectionEF())
             {
                 var SelectedCategory = Session["selectedCategory"].ToString();
                 var neededHeadings = (from headings in conn.Headings
@@ -118,7 +118,7 @@ namespace Lefarge_FE_App
 
         public void getHeadingsQuestions(int selectedID)
         {
-            using (DefaultConnection conn = new DefaultConnection())
+            using (DefaultConnectionEF conn = new DefaultConnectionEF())
             {
                 var qList = (from questions in conn.Questions
                              where questions.Headings_Under.Contains(selectedID.ToString())
@@ -243,7 +243,7 @@ namespace Lefarge_FE_App
                 }
                 else
                 {
-                    using (DefaultConnection conn = new DefaultConnection())
+                    using (DefaultConnectionEF conn = new DefaultConnectionEF())
                     {
                         Result r = new Result();
                         
