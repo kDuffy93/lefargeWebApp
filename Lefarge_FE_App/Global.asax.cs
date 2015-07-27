@@ -28,7 +28,7 @@ namespace Lefarge_FE_App
           
             HttpException objError = Server.GetLastError() as HttpException;
           
-            
+             
             if (objError.GetHttpCode() == 404)
             {
                 Server.Transfer("/404.aspx");
