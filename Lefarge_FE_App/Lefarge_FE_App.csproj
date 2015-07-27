@@ -129,7 +129,6 @@
     <Content Include="admin\plant.aspx" />
     <Content Include="Lefarge.Master" />
     <Content Include="admin\plants.aspx" />
-    <Content Include="logout.aspx" />
     <Content Include="packages.config" />
     <EntityDeploy Include="Models\lefarge.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -256,13 +255,6 @@
     </Compile>
     <Compile Include="admin\main.aspx.designer.cs">
       <DependentUpon>main.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="logout.aspx.cs">
-      <DependentUpon>logout.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="logout.aspx.designer.cs">
-      <DependentUpon>logout.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\Action_Plan.cs">
       <DependentUpon>lefarge.tt</DependentUpon>
