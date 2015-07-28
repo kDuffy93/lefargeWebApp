@@ -40,6 +40,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxControlToolkit">
+      <HintPath>..\packages\AjaxControlToolkit.15.1.2.0\lib\net40\AjaxControlToolkit.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -116,6 +119,7 @@
     <Content Include="404.aspx" />
     <Content Include="admin\categories.aspx" />
     <Content Include="admin\category.aspx" />
+    <Content Include="assignUR.aspx" />
     <Content Include="controls\defrib.ascx" />
     <Content Include="admin\equipment.aspx" />
     <Content Include="admin\equipmentList.aspx" />
@@ -193,6 +197,13 @@
     <Compile Include="admin\category.aspx.designer.cs">
       <DependentUpon>category.aspx</DependentUpon>
     </Compile>
+    <Compile Include="assignUR.aspx.cs">
+      <DependentUpon>assignUR.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="assignUR.aspx.designer.cs">
+      <DependentUpon>assignUR.aspx</DependentUpon>
+    </Compile>
     <Compile Include="controls\defrib.ascx.cs">
       <DependentUpon>defrib.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -235,6 +246,7 @@
     <Compile Include="admin\headings.aspx.designer.cs">
       <DependentUpon>headings.aspx</DependentUpon>
     </Compile>
+    <Compile Include="logic\RoleActions.cs" />
     <Compile Include="login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

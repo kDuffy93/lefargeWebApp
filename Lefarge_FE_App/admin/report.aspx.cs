@@ -15,13 +15,26 @@ namespace Lefarge_FE_App
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           
             Int32 EquipmentID = Convert.ToInt32(Request.QueryString["selectedEquipment"]);
-            txtEqID.Text = EquipmentID.ToString();
-            txtEqUn.Text = EquipmentID.ToString();
-            convertIDtoValue(EquipmentID);
-            getReport(EquipmentID);
-            selectDate(EquipmentID);
+            if(!IsPostBack)
+            {
+               
+                txtEqID.Text = EquipmentID.ToString();
+                txtEqUn.Text = EquipmentID.ToString();
+                convertIDtoValue(EquipmentID);
+                selectDate(EquipmentID);
+            }
+                
+            
+            if(IsPostBack)
+            {
+               
+               var SelectedIndex = ddlDates.SelectedIndex;
+               selectDate(EquipmentID, SelectedIndex);
+            }
+            
+
+            
         }
         protected void selectDate(int EquipmentID)
     {
@@ -31,7 +44,7 @@ namespace Lefarge_FE_App
                                              where r.Equipment_ID == EquipmentID
                                              select r.Date_Completed).Distinct().ToList();
 
-
+                        getReport(EquipmentID, possibleDates[0]);
             
             
        ddlDates.DataSource = possibleDates;
@@ -40,6 +53,22 @@ namespace Lefarge_FE_App
       
         }
     }
+        protected void selectDate(int EquipmentID, int index)
+        {
+            using (DefaultConnectionEF conn = new DefaultConnectionEF())
+            {
+                var possibleDates = (from r in conn.Results
+                                     where r.Equipment_ID == EquipmentID
+                                     select r.Date_Completed).Distinct().ToList();
+
+                getReport(EquipmentID, possibleDates[index]);
+
+
+                ddlDates.SelectedIndex = index;
+
+
+            }
+        }
         protected void convertIDtoValue(int EquipmentID)
         {
              using (DefaultConnectionEF conn = new DefaultConnectionEF())
@@ -51,13 +80,13 @@ namespace Lefarge_FE_App
 
         }
         }
-        protected void getReport(int EquipmentID)
+        protected void getReport(int EquipmentID, DateTime selectedDate)
         {
             using (DefaultConnectionEF conn = new DefaultConnectionEF())
             {
                 //use link to query the Departments model
                 var result = from r in conn.Results
-                             where r.Equipment_ID == EquipmentID
+                             where r.Equipment_ID == EquipmentID & r.Date_Completed == selectedDate
                             select r;
                 //bind the query result to the gridview
                 grdResults.DataSource = result.ToList();
@@ -109,13 +138,15 @@ namespace Lefarge_FE_App
 
         protected void ddlDates_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var a = sender as RadioButtonList;
+            DropDownList ddl = (DropDownList)sender;
+            Session["selectedDate"] = Convert.ToDateTime(ddl.SelectedValue);
+            Session["selectedDateIndex"] = ddl.SelectedIndex; 
             
         }
 
         protected void ddlDates_DataBinding(object sender, EventArgs e)
         {
-            var b = sender as RadioButtonList;
+            var b = sender as DropDownList;
            // var firstDate = b.SelectedValue;
 
           /* foreach (DataRow dr in grdResults.Rows)

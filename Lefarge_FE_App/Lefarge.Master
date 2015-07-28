@@ -19,9 +19,7 @@
 <body>
    
     <form data-role="page" runat="server">
-        <div id="refreshControlContainer" class="aspNetHidden">
-        <refresh:refreshControl runat="server" id="defrib" />
-            </div>
+         
   <nav class="nav navbar-default">
        
         <ul class="nav navbar-nav">
@@ -29,8 +27,8 @@
             <asp:PlaceHolder runat="server" ID="plhPublic">
             <li><a rel="external" href="register.aspx">Register</a></li>
              <li><a rel="external" href="login.aspx">Log in</a></li></asp:PlaceHolder>
+
             <asp:PlaceHolder runat="server" id="plhPrivate">
-            
             <li><a rel="external" href="/admin/startSurvey.aspx">Start Survey</a></li>
             <li><a rel="external" href="/admin/plants.aspx">Plant</a></li>
             <li><a rel="external" href="/admin/equipmentList.aspx">Equipment</a></li>
@@ -48,12 +46,12 @@
  
         </asp:ContentPlaceHolder>
     </div>
-  </form>
+  
     <footer class="alert alert-success">
         @2015 - Lefarge Fixed Equipment Surveys - Built May 25, 2015 -  By: Kyle Duffy 
     </footer>
        
-        
+        </form>
       
     <script type="text/javascript">
         $(document).ready(function () {

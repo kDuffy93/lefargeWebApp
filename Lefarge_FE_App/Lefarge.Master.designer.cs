@@ -13,15 +13,6 @@ namespace Lefarge_FE_App {
     public partial class Lefarge {
         
         /// <summary>
-        /// defrib control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Lefarge_FE_App.defrib defrib;
-        
-        /// <summary>
         /// plhPublic control.
         /// </summary>
         /// <remarks>

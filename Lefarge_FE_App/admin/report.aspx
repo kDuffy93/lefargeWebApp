@@ -7,7 +7,7 @@
          <asp:Label runat="server" For="txtEqID">Unit #</asp:Label>
         <asp:TextBox ID="txtEqID" runat="server" Enabled="false"></asp:TextBox>
     </div>
-    <asp:DropDownList runat="server" ID="ddlDates" AutoPostBack="true"   OnSelectedIndexChanged="ddlDates_SelectedIndexChanged" OnDataBinding="ddlDates_DataBinding"></asp:DropDownList>
+    <asp:DropDownList runat="server" ID="ddlDates" AutoPostBack="true"   OnSelectedIndexChanged="ddlDates_SelectedIndexChanged" OnDataBinding="ddlDates_DataBinding" ></asp:DropDownList>
     <asp:GridView ID="grdResults" runat="server" CssClass="table table-striped"
         AutoGenerateColumns="False"
         DataKeyNames="ID"  OnRowDataBound="grdResults_RowDataBound" >

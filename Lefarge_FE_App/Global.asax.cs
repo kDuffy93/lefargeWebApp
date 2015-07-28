@@ -6,8 +6,8 @@ using System.Web.Security;
 using System.Web.SessionState;
 using System.Data.Entity;
 using Lefarge_FE_App.Models;
-
 using System.Net.Mail;
+using Lefarge_FE_App.logic;
 
 namespace Lefarge_FE_App
 {
@@ -15,7 +15,7 @@ namespace Lefarge_FE_App
     {
         protected void Application_Start(object sender, EventArgs e)
         {
-   
+ 
         }
       
         protected void Application_Error(object sender, EventArgs e)
@@ -46,7 +46,7 @@ namespace Lefarge_FE_App
            * */
 
             Server.ClearError();
-            Response.Redirect("/error.aspx");
+            Server.Transfer("/error.aspx");
         }
        
     }

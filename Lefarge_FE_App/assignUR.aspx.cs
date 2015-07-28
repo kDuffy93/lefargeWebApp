@@ -7,11 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace Lefarge_FE_App
 {
-    public partial class defrib : System.Web.UI.UserControl
+    public partial class assignUR : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-        //    Response.AddHeader("Refresh", Convert.ToString((Session.Timeout * 60) - 30));
+
         }
     }
 }
