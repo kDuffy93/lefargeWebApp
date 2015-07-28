@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Lefarge_FE_App {
+namespace Lefarge_FE_App.admin {
     
     
     public partial class report {

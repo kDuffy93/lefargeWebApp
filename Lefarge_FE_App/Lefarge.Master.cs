@@ -22,6 +22,7 @@ namespace Lefarge_FE_App
                 plhPrivate.Visible = false;
                 plhPublic.Visible = true;
             }
+            
         }
     }
 }

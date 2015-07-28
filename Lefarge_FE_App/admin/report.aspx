@@ -1,4 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Lefarge.Master" AutoEventWireup="true" CodeBehind="report.aspx.cs" Inherits="Lefarge_FE_App.report" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/report.Master" AutoEventWireup="true" CodeBehind="report.aspx.cs" Inherits="Lefarge_FE_App.admin.report" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="well">
         <h3>Report for:</h3>
@@ -7,7 +8,7 @@
          <asp:Label runat="server" For="txtEqID">Unit #</asp:Label>
         <asp:TextBox ID="txtEqID" runat="server" Enabled="false"></asp:TextBox>
     </div>
-    <asp:DropDownList runat="server" ID="ddlDates" AutoPostBack="true"   OnSelectedIndexChanged="ddlDates_SelectedIndexChanged" OnDataBinding="ddlDates_DataBinding" ></asp:DropDownList>
+    <asp:DropDownList runat="server" ID="ddlDates" AutoPostBack="true"   OnSelectedIndexChanged="ddlDates_SelectedIndexChanged" OnDataBinding="ddlDates_DataBinding"></asp:DropDownList>
     <asp:GridView ID="grdResults" runat="server" CssClass="table table-striped"
         AutoGenerateColumns="False"
         DataKeyNames="ID"  OnRowDataBound="grdResults_RowDataBound" >

@@ -119,6 +119,7 @@
     <Content Include="404.aspx" />
     <Content Include="admin\categories.aspx" />
     <Content Include="admin\category.aspx" />
+    <Content Include="admin\report.aspx" />
     <Content Include="assignUR.aspx" />
     <Content Include="controls\defrib.ascx" />
     <Content Include="admin\equipment.aspx" />
@@ -151,6 +152,7 @@
       <DependentUpon>lefarge.edmx</DependentUpon>
       <LastGenOutput>lefarge.cs</LastGenOutput>
     </Content>
+    <Content Include="report.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -164,7 +166,6 @@
     <Content Include="admin\question.aspx" />
     <Content Include="admin\questionList.aspx" />
     <Content Include="register.aspx" />
-    <Content Include="admin\report.aspx" />
     <Content Include="admin\selectResults.aspx" />
     <Content Include="admin\startReport.aspx" />
     <Content Include="admin\startSurvey.aspx" />
@@ -196,6 +197,13 @@
     </Compile>
     <Compile Include="admin\category.aspx.designer.cs">
       <DependentUpon>category.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\report.aspx.cs">
+      <DependentUpon>report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\report.aspx.designer.cs">
+      <DependentUpon>report.aspx</DependentUpon>
     </Compile>
     <Compile Include="assignUR.aspx.cs">
       <DependentUpon>assignUR.aspx</DependentUpon>
@@ -367,13 +375,6 @@
     <Compile Include="register.aspx.designer.cs">
       <DependentUpon>register.aspx</DependentUpon>
     </Compile>
-    <Compile Include="admin\report.aspx.cs">
-      <DependentUpon>report.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\report.aspx.designer.cs">
-      <DependentUpon>report.aspx</DependentUpon>
-    </Compile>
     <Compile Include="admin\selectResults.aspx.cs">
       <DependentUpon>selectResults.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -401,6 +402,13 @@
     </Compile>
     <Compile Include="admin\selectEquipment.aspx.designer.cs">
       <DependentUpon>selectEquipment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="report.Master.cs">
+      <DependentUpon>report.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="report.Master.designer.cs">
+      <DependentUpon>report.Master</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
     <Compile Include="admin\survey.aspx.cs">
