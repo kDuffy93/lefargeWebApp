@@ -119,7 +119,7 @@
     <Content Include="404.aspx" />
     <Content Include="admin\categories.aspx" />
     <Content Include="admin\category.aspx" />
-    <Content Include="admin\report.aspx" />
+    <Content Include="lafargeUser\report.aspx" />
     <Content Include="assignUR.aspx" />
     <Content Include="controls\defrib.ascx" />
     <Content Include="admin\equipment.aspx" />
@@ -129,7 +129,7 @@
     <Content Include="admin\headings.aspx" />
     <Content Include="images\lafarge.jpg" />
     <Content Include="login.aspx" />
-    <Content Include="admin\logout.aspx" />
+    <Content Include="lafargeUser\logout.aspx" />
     <Content Include="admin\main.aspx" />
     <Content Include="admin\plant.aspx" />
     <Content Include="Lefarge.Master" />
@@ -161,13 +161,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="admin\default.aspx" />
+    <Content Include="lafargeUser\default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="admin\question.aspx" />
     <Content Include="admin\questionList.aspx" />
     <Content Include="register.aspx" />
-    <Content Include="admin\selectResults.aspx" />
-    <Content Include="admin\startReport.aspx" />
+    <Content Include="lafargeUser\selectResults.aspx" />
+    <Content Include="lafargeUser\startReport.aspx" />
     <Content Include="admin\startSurvey.aspx" />
     <Content Include="admin\selectEquipment.aspx" />
     <Content Include="admin\survey.aspx" />
@@ -199,11 +199,11 @@
     <Compile Include="admin\category.aspx.designer.cs">
       <DependentUpon>category.aspx</DependentUpon>
     </Compile>
-    <Compile Include="admin\report.aspx.cs">
+    <Compile Include="lafargeUser\report.aspx.cs">
       <DependentUpon>report.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="admin\report.aspx.designer.cs">
+    <Compile Include="lafargeUser\report.aspx.designer.cs">
       <DependentUpon>report.aspx</DependentUpon>
     </Compile>
     <Compile Include="assignUR.aspx.cs">
@@ -263,11 +263,11 @@
     <Compile Include="login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="admin\logout.aspx.cs">
+    <Compile Include="lafargeUser\logout.aspx.cs">
       <DependentUpon>logout.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="admin\logout.aspx.designer.cs">
+    <Compile Include="lafargeUser\logout.aspx.designer.cs">
       <DependentUpon>logout.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\main.aspx.cs">
@@ -322,11 +322,11 @@
     <Compile Include="admin\plants.aspx.designer.cs">
       <DependentUpon>plants.aspx</DependentUpon>
     </Compile>
-    <Compile Include="admin\default.aspx.cs">
+    <Compile Include="lafargeUser\default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="admin\default.aspx.designer.cs">
+    <Compile Include="lafargeUser\default.aspx.designer.cs">
       <DependentUpon>default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
@@ -376,18 +376,18 @@
     <Compile Include="register.aspx.designer.cs">
       <DependentUpon>register.aspx</DependentUpon>
     </Compile>
-    <Compile Include="admin\selectResults.aspx.cs">
+    <Compile Include="lafargeUser\selectResults.aspx.cs">
       <DependentUpon>selectResults.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="admin\selectResults.aspx.designer.cs">
+    <Compile Include="lafargeUser\selectResults.aspx.designer.cs">
       <DependentUpon>selectResults.aspx</DependentUpon>
     </Compile>
-    <Compile Include="admin\startReport.aspx.cs">
+    <Compile Include="lafargeUser\startReport.aspx.cs">
       <DependentUpon>startReport.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="admin\startReport.aspx.designer.cs">
+    <Compile Include="lafargeUser\startReport.aspx.designer.cs">
       <DependentUpon>startReport.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\startSurvey.aspx.cs">

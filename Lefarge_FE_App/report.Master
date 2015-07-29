@@ -22,7 +22,7 @@
   <nav class="nav navbar-default">
        
         <ul class="nav navbar-nav">
-            <li> <a href="/admin/default.aspx"> <asp:Image runat="server"  rel="external" ImageUrl="images/lafarge.jpg" PostBackUrl="~/default.aspx" AlternateText="Lafarge Home"/></a></li>
+            <li> <a href="/lafargeUser/default.aspx"> <asp:Image runat="server"  rel="external" ImageUrl="images/lafarge.jpg" PostBackUrl="~/default.aspx" AlternateText="Lafarge Home"/></a></li>
             </ul>
       </nav>
     

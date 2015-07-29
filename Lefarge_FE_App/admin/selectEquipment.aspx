@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Lefarge.Master" AutoEventWireup="true" CodeBehind="selectEquipment.aspx.cs" Inherits="Lefarge_FE_App.survey" %>
 
     <asp:Content ID="cntMain" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="well" style="width:750px; height:275px">
+    <div class="well" style="width:748px; height:300px">
         <div style="float:left" >
         <div>
         <asp:Label runat="server">Selected Plant:</asp:Label>
@@ -34,11 +34,11 @@
 
 
         <div>
-            <h2> Select which piece of equipment would you like to do a survey on:</h2>
+            <h2>Choose equipment to complete survey for:</h2>
         </div>
         
        
-            <div class="well" style="width:900px">
+            <div class="well" style="width:748px">
               <asp:Panel ID="pnlButtons" runat="server"></asp:Panel>
                
             </div>

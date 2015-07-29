@@ -37,9 +37,13 @@
             <li><a rel="external" href="/admin/categories.aspx">Categories</a></li>
             <li><a rel="external" href="/admin/headings.aspx">Headings</a></li>
             <li><a rel="external" href="/admin/questionList.aspx">Questions</a></li>
-            <li><a rel="external" href="/admin/startReport.aspx">Generate Reports</a></li>
+            <li><a rel="external" href="/lafargeUser/startReport.aspx">Generate Reports</a></li>
             <li><a rel="external" href="/admin/triggerError.aspx">Throw Non-404 Error For Testing</a></li>
-            <li><a rel="external" href="logout.aspx">Log out</a></li></asp:PlaceHolder>
+            <li><a rel="external" href="/lafargeUser/logout.aspx">Log out</a></li></asp:PlaceHolder>
+            <asp:PlaceHolder runat="server" ID="plhLafargeUser">
+                <li><a rel="external" href="/lafargeUser/logout.aspx">Log out</a></li>
+            <li><a rel="external" href="/lafargeUser/startReport.aspx">Generate Reports</a></li>
+            </asp:PlaceHolder>
             </ul>
     </nav>
    

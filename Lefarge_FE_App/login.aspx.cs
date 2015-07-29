@@ -30,7 +30,7 @@ namespace Lefarge_FE_App
                 var userIdentity = userManager.CreateIdentity(user, DefaultAuthenticationTypes.ApplicationCookie);
 
                 authenticationManager.SignIn(new AuthenticationProperties() { IsPersistent = false }, userIdentity);
-                Response.Redirect("/admin/default.aspx");
+                Response.Redirect("/lafargeUser/default.aspx");
             }
             else
             {
