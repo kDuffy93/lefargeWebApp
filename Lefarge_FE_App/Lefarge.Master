@@ -25,7 +25,7 @@
   <nav class="nav navbar-default">
        
         <ul class="nav navbar-nav">
-            <li> <a href="/admin/default.aspx"> <asp:Image runat="server"  rel="external" ImageUrl="images/lafarge.jpg" PostBackUrl="~/default.aspx" AlternateText="Lafarge Home"/></a></li>
+            <li> <a href="/lafargeUser/default.aspx"> <asp:Image runat="server"  rel="external" ImageUrl="images/lafarge.jpg" PostBackUrl="~/default.aspx" AlternateText="Lafarge Home"/></a></li>
             <asp:PlaceHolder runat="server" ID="plhPublic">
             <li><a rel="external" href="register.aspx">Register</a></li>
              <li><a rel="external" href="login.aspx">Log in</a></li></asp:PlaceHolder>
@@ -40,6 +40,7 @@
             <li><a rel="external" href="/lafargeUser/startReport.aspx">Generate Reports</a></li>
             <li><a rel="external" href="/admin/triggerError.aspx">Throw Non-404 Error For Testing</a></li>
             <li><a rel="external" href="/lafargeUser/logout.aspx">Log out</a></li></asp:PlaceHolder>
+
             <asp:PlaceHolder runat="server" ID="plhLafargeUser">
                 <li><a rel="external" href="/lafargeUser/logout.aspx">Log out</a></li>
             <li><a rel="external" href="/lafargeUser/startReport.aspx">Generate Reports</a></li>
