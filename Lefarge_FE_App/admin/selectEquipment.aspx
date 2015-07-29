@@ -12,7 +12,7 @@
         <asp:TextBox ID="txtCategory" style="text-align:center" runat="server" Enabled="false" Text="0" Width="250" ></asp:TextBox>
             </div>
             </div>
-        <div style="float:right; vertical-align:top; padding-bottom:1em; text-align: center; border-bottom:dotted; border-bottom-width:2px">
+        <div style="float:right; border-bottom:dotted; border-bottom-width:2px">
             <div style="vertical-align:top; padding-bottom:1em;">
                 <asp:Label runat="server" Text="If you need to change the plant or category" Width="300"></asp:Label>
             </div>
@@ -21,7 +21,7 @@
             </div>
         </div>
       
-        <div style="float:right; vertical-align:bottom; text-align: center; padding-top:1em">
+        <div style="float:right; padding-top:1em">
             <div style="vertical-align:top">
                 <asp:Label runat="server" Text="Dont see the piece of Equipment in these selections? <br /> Why dont you add it by clicking the button below." Width="300"></asp:Label>
             </div>
