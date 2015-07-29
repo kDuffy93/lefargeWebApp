@@ -1,0 +1,23 @@
+.table-striped > tbody > tr:nth-child(odd) > td{
+  background-color: #75A980;
+  font-family:'Times New Roman';
+     font-size:20px;
+     text-shadow:none;
+}
+.table-striped > tbody > tr:nth-child(even) > td
+ {
+  background-color: #446C4D;
+  font-family:'Times New Roman';
+     font-size:20px;
+     text-shadow:none;
+}
+.table-striped > tbody > tr:nth-child(odd) > th,
+.table-striped > tbody > tr:nth-child(even) > th{
+     background-color: lightgray;
+     font-family:'Times New Roman';
+     font-size:22px;
+     color: black;
+     text-shadow:none;
+     border-width:0px;
+     
+}
