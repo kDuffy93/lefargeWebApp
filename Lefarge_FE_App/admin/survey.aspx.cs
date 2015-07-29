@@ -45,7 +45,7 @@ namespace Lefarge_FE_App
             buildTable();
 
             fillSelections();
-         
+            convertIDtoValue();
 
             if (IsPostBack)
             {
@@ -54,7 +54,30 @@ namespace Lefarge_FE_App
 
         }
 
+        protected void convertIDtoValue()
+        {
+            using (DefaultConnectionEF conn = new DefaultConnectionEF())
+            {
+                var plantID = Convert.ToInt32(txtPlant.Text);
+                var catID = Convert.ToInt32(txtCategory.Text);
+                var equipID = Convert.ToInt32(txtEquipment.Text);
 
+                var plantName = (from p in conn.Plants
+                                 where p.Plant_ID == plantID
+                                 select p).FirstOrDefault();
+                txtPlant.Text = plantName.Plant_Name;
+
+                var catName = (from c in conn.Categories
+                               where c.Category_ID == catID
+                               select c).FirstOrDefault();
+                txtCategory.Text = catName.Category1;
+
+                var equipName = (from e in conn.Equipments
+                                 where e.Unit_Number == equipID
+                                 select e).FirstOrDefault();
+                txtEquipment.Text = equipName.Name;
+            }
+        }
         private void fillSelections()
         {
             var plant = Session["selectedPlant"];
@@ -80,10 +103,12 @@ namespace Lefarge_FE_App
                 for (int i = 0; i < neededHeadings.Count; i++)
                 {
                     TableHeaderRow r = new TableHeaderRow();
-                    r.ForeColor = Color.Lime;
-                    r.BackColor = Color.Navy;
                     var heading = neededHeadings[i];
                     TableHeaderCell c = new TableHeaderCell();
+                    TableHeaderCell a1 = new TableHeaderCell();
+                    TableHeaderCell a2 = new TableHeaderCell();
+                    TableHeaderCell a3 = new TableHeaderCell();
+ 
                     c.Text = heading;
                     c.ID = "heading" + i;
                     var allIDs = (from headings in conn.Headings
@@ -92,6 +117,10 @@ namespace Lefarge_FE_App
                     var selectedID = allIDs[i];
                     // c.ID = selectedID;
                     r.Controls.Add(c);
+                    r.Controls.Add(a1);
+                    r.Controls.Add(a2);
+                    r.Controls.Add(a3);
+
                     tblSurvey.Controls.Add(r);
                     getHeadingsQuestions(selectedID);
                     if (i + 1 == neededHeadings.Count)
@@ -132,7 +161,8 @@ namespace Lefarge_FE_App
                     TableCell cellQuestion = new TableCell();
                     cellQuestion.Text = question;
                     cellQuestion.BackColor = Color.Lime;
-                    cellQuestion.ForeColor = Color.Navy;
+                    cellQuestion.ForeColor = Color.Black;
+                    
                     var allIDs = (from questions in conn.Questions
                                   where questions.Headings_Under.Contains(selectedID.ToString())
                                   select questions.Question_ID).ToList();
@@ -317,7 +347,7 @@ namespace Lefarge_FE_App
 
         protected void btnTimeout_Click(object sender, EventArgs e)
         {
-            txtTimeout.Text = Session.Timeout.ToString();
+            
         } // btn submit click close
     } // partial class close
 } //namespace close 

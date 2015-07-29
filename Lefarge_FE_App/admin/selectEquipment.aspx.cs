@@ -18,11 +18,30 @@ namespace Lefarge_FE_App
             {
                
                 fillSelections();
+                convertIDtoValue();
                 fillBtnPnl();
+
             }
 
         }
 
+        protected void convertIDtoValue()
+        {
+            using (DefaultConnectionEF conn = new DefaultConnectionEF())
+            {
+                var plantID = Convert.ToInt32(txtPlant.Text);
+               var catID = Convert.ToInt32(txtCategory.Text);
+                var plantName = (from p in conn.Plants
+                                 where p.Plant_ID == plantID
+                                 select p).FirstOrDefault();
+                txtPlant.Text = plantName.Plant_Name;
+
+                var catName = (from c in conn.Categories
+                               where c.Category_ID == catID
+                                 select c).FirstOrDefault();
+                txtCategory.Text = catName.Category1;
+            }
+        }
         private void fillSelections()
         {
             var plant = Session["selectedPlant"];

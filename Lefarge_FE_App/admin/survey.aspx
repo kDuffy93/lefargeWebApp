@@ -1,5 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Lefarge.Master" AutoEventWireup="true" CodeBehind="survey.aspx.cs" Inherits="Lefarge_FE_App.survey1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div id="pnlRefresh">
+
+    </div>
     <div class="well">
         <div>
         <asp:Label runat="server">Selected Plant:</asp:Label>
@@ -13,9 +16,7 @@
         <asp:Label runat="server">selected piece of equipment:</asp:Label>
         <asp:TextBox ID="txtEquipment" runat="server" Enabled="false" Text="0"></asp:TextBox>
             </div> 
-        <div>
-            <asp:Button runat="server" ID="btnTimeout" OnClick="btnTimeout_Click" text="Check Timeout time remaining"/>
-            <asp:TextBox ID="txtTimeout" runat="server" enabled="false"></asp:TextBox></div>  
+      
         </div> 
      <asp:Button runat="server" Visible="false" text="Start a new survey" ID="btnNewSurvey" OnClick="btnNewSurvey_Click" CssClass="btn btn-primary"/>
     <div id="srvMain">

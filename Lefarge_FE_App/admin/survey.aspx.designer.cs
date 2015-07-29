@@ -40,24 +40,6 @@ namespace Lefarge_FE_App {
         protected global::System.Web.UI.WebControls.TextBox txtEquipment;
         
         /// <summary>
-        /// btnTimeout control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnTimeout;
-        
-        /// <summary>
-        /// txtTimeout control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTimeout;
-        
-        /// <summary>
         /// btnNewSurvey control.
         /// </summary>
         /// <remarks>

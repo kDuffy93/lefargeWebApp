@@ -172,6 +172,7 @@
     <Content Include="admin\selectEquipment.aspx" />
     <Content Include="admin\survey.aspx" />
     <Content Include="admin\triggerError.aspx" />
+    <Content Include="lafargeStyle.css" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
