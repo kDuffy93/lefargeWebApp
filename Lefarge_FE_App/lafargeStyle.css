@@ -1,15 +1,17 @@
 .table-striped > tbody > tr:nth-child(odd) > td{
-  background-color: #75A980;
+  background-color: #01DC8A;
   font-family:'Times New Roman';
      font-size:20px;
      text-shadow:none;
+     font-weight: 700;
 }
 .table-striped > tbody > tr:nth-child(even) > td
  {
-  background-color: #446C4D;
+  background-color: #01B473;
   font-family:'Times New Roman';
      font-size:20px;
      text-shadow:none;
+     font-weight: 700;
 }
 .table-striped > tbody > tr:nth-child(odd) > th,
 .table-striped > tbody > tr:nth-child(even) > th{
@@ -17,6 +19,7 @@
      font-family:'Times New Roman';
      font-size:22px;
      color: black;
+     font-weight: 700;
      text-shadow:none;
      border-width:0px;
      

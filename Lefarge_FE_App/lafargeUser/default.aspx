@@ -5,15 +5,15 @@
    <div class="well">
      <header>Home</header>
     <asp:TextBox runat="server" Enabled="false" ID="txtWelcome"></asp:TextBox>
-           <p>Click on the <a rel="external" href="startSurvey.aspx">start survey</a> tab to get started on a new survey</p>
+           <p>Click on the <a rel="external" href="/admin/startSurvey.aspx">start survey</a> tab to get started on a new survey</p>
 
-        <p>Or view reports with the <a rel="external" href="startReport.aspx">Generate Reports</a> tab.</p>
+        <p>Or view reports with the <a rel="external" href="/lafargeUser/startReport.aspx">Generate Reports</a> tab.</p>
         </div>
     </asp:PlaceHolder>
     <asp:PlaceHolder runat="server" ID="plhMember">
    <div class="well">
      <header>Home</header>
-    <asp:TextBox runat="server" Enabled="false" ID="TextBox1"></asp:TextBox>
+    <asp:TextBox runat="server" Enabled="false" ID="txtWelcomeMember"></asp:TextBox>
         <p>You are able to view reports with the <a rel="external" href="startReport.aspx">Generate Reports</a> tab.</p>
         </div>
     </asp:PlaceHolder>

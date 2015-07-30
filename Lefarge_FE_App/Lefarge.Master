@@ -55,12 +55,12 @@
     </div>
   
     <footer class="alert alert-success">
-        @2015 - Lefarge Fixed Equipment Surveys - Built May 25, 2015 -  By: Kyle Duffy 
+        @2015 - Lafarge Fixed Equipment Surveys - Built May 25, 2015 -  By: Kyle Duffy 
     </footer>
        
         </form>
       
-    <script type="text/javascript">
+    <%--<script type="text/javascript">
         $(document).ready(function () {
             jQuery("a").filter(function () {
                 return this.innerHTML.indexOf("Delete") == 0;
@@ -69,7 +69,7 @@
             });
         });
 
-   </script>
+   </script>--%>
        
     </body>
 </html>

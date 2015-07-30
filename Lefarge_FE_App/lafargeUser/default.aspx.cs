@@ -16,11 +16,13 @@ namespace Lefarge_FE_App
             {
                 plhMember.Visible = false;
                 plhUser.Visible = true;
+                txtWelcome.Text = "Welcome " + HttpContext.Current.User.Identity.Name.ToString();
             }
             else if (HttpContext.Current.User.IsInRole("member"))
             {
                 plhMember.Visible = true;
                 plhUser.Visible = false;
+                txtWelcomeMember.Text = "Welcome " + HttpContext.Current.User.Identity.Name.ToString();
             }
         }
     }
