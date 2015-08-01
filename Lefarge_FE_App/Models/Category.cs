@@ -17,19 +17,19 @@ namespace Lefarge_FE_App.Models
         public Category()
         {
             this.Equipments = new HashSet<Equipment>();
+            this.Headings = new HashSet<Heading>();
             this.Potential_Action_Plans = new HashSet<Potential_Action_Plans>();
             this.Potential_Deficiencies = new HashSet<Potential_Deficiencies>();
             this.Questions = new HashSet<Question>();
-            this.Headings = new HashSet<Heading>();
         }
     
         public int Category_ID { get; set; }
         public string Category1 { get; set; }
     
         public virtual ICollection<Equipment> Equipments { get; set; }
+        public virtual ICollection<Heading> Headings { get; set; }
         public virtual ICollection<Potential_Action_Plans> Potential_Action_Plans { get; set; }
         public virtual ICollection<Potential_Deficiencies> Potential_Deficiencies { get; set; }
         public virtual ICollection<Question> Questions { get; set; }
-        public virtual ICollection<Heading> Headings { get; set; }
     }
 }
