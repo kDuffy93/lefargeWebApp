@@ -280,7 +280,8 @@ namespace Lefarge_FE_App
                         // set date completed
                         r.Date_Completed = dateAndTime;
                         //save white equipment it is
-                        r.Equipment_ID = Convert.ToInt32(txtEquipment.Text);
+                        
+                        r.Equipment_ID = Convert.ToInt32(Request.QueryString["selectedEquipment"].ToString()); ;
                         foreach (TableCell currentCell in workingRow.Cells)
                         {
                             if (currentCell == workingRow.Cells[0])

@@ -13,10 +13,10 @@ namespace Lefarge_FE_App.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class drwSurvey_dbEntities : DbContext
+    public partial class DefaultConnectionEF : DbContext
     {
-        public drwSurvey_dbEntities()
-            : base("name=drwSurvey_dbEntities")
+        public DefaultConnectionEF()
+            : base("name=DefaultConnectionEF")
         {
         }
     

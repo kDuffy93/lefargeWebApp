@@ -145,23 +145,6 @@
       <LastGenOutput>drwdatabase.cs</LastGenOutput>
     </Content>
     <Content Include="packages.config" />
-    <EntityDeploy Include="Models\lefarge.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>lefarge.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\lefarge.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>lefarge.edmx</DependentUpon>
-      <LastGenOutput>lefarge.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\lefarge.edmx.diagram">
-      <DependentUpon>lefarge.edmx</DependentUpon>
-    </Content>
-    <Content Include="Models\lefarge.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>lefarge.edmx</DependentUpon>
-      <LastGenOutput>lefarge.cs</LastGenOutput>
-    </Content>
     <Content Include="report.Master" />
     <EntityDeploy Include="Models\drwdatabase.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -315,6 +298,9 @@
     <Compile Include="Models\C__MigrationHistory.cs">
       <DependentUpon>drwdatabase.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Deficiency.cs">
+      <DependentUpon>drwdatabase.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\drwdatabase.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -330,31 +316,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>drwdatabase.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\lefargeEntities.cs" />
-    <Compile Include="Models\Deficiency.cs">
-      <DependentUpon>drwdatabase.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\Equipment.cs">
       <DependentUpon>drwdatabase.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Heading.cs">
       <DependentUpon>drwdatabase.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\lefarge.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>lefarge.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\lefarge.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>lefarge.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\lefarge.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>lefarge.edmx</DependentUpon>
-    </Compile>
+    <Compile Include="Models\lefargeEntities.cs" />
     <Compile Include="admin\plant.aspx.cs">
       <DependentUpon>plant.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -398,13 +366,13 @@
     <Compile Include="Models\Potential_Deficiencies.cs">
       <DependentUpon>drwdatabase.tt</DependentUpon>
     </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\Question.cs">
       <DependentUpon>drwdatabase.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Result.cs">
       <DependentUpon>drwdatabase.tt</DependentUpon>
     </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="admin\question.aspx.cs">
       <DependentUpon>question.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
