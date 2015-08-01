@@ -134,24 +134,24 @@
     <Content Include="admin\plant.aspx" />
     <Content Include="Lefarge.Master" />
     <Content Include="admin\plants.aspx" />
-    <Content Include="Models\drwdatabase.Context.tt">
+    <Content Include="Models\drwdata.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>drwdatabase.edmx</DependentUpon>
-      <LastGenOutput>drwdatabase.Context.cs</LastGenOutput>
+      <DependentUpon>drwdata.edmx</DependentUpon>
+      <LastGenOutput>drwdata.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\drwdatabase.tt">
+    <Content Include="Models\drwdata.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>drwdatabase.edmx</DependentUpon>
-      <LastGenOutput>drwdatabase.cs</LastGenOutput>
+      <DependentUpon>drwdata.edmx</DependentUpon>
+      <LastGenOutput>drwdata.cs</LastGenOutput>
     </Content>
     <Content Include="packages.config" />
     <Content Include="report.Master" />
-    <EntityDeploy Include="Models\drwdatabase.edmx">
+    <EntityDeploy Include="Models\drwdata.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>drwdatabase.Designer.cs</LastGenOutput>
+      <LastGenOutput>drwdata.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\drwdatabase.edmx.diagram">
-      <DependentUpon>drwdatabase.edmx</DependentUpon>
+    <Content Include="Models\drwdata.edmx.diagram">
+      <DependentUpon>drwdata.edmx</DependentUpon>
     </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -278,49 +278,49 @@
       <DependentUpon>main.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\Action_Plan.cs">
-      <DependentUpon>drwdatabase.tt</DependentUpon>
+      <DependentUpon>drwdata.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\AspNetRole.cs">
-      <DependentUpon>drwdatabase.tt</DependentUpon>
+      <DependentUpon>drwdata.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\AspNetUser.cs">
-      <DependentUpon>drwdatabase.tt</DependentUpon>
+      <DependentUpon>drwdata.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\AspNetUserClaim.cs">
-      <DependentUpon>drwdatabase.tt</DependentUpon>
+      <DependentUpon>drwdata.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\AspNetUserLogin.cs">
-      <DependentUpon>drwdatabase.tt</DependentUpon>
+      <DependentUpon>drwdata.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Category.cs">
-      <DependentUpon>drwdatabase.tt</DependentUpon>
+      <DependentUpon>drwdata.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\C__MigrationHistory.cs">
-      <DependentUpon>drwdatabase.tt</DependentUpon>
+      <DependentUpon>drwdata.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Deficiency.cs">
-      <DependentUpon>drwdatabase.tt</DependentUpon>
+      <DependentUpon>drwdata.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\drwdatabase.Context.cs">
+    <Compile Include="Models\drwdata.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>drwdatabase.Context.tt</DependentUpon>
+      <DependentUpon>drwdata.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\drwdatabase.cs">
+    <Compile Include="Models\drwdata.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>drwdatabase.tt</DependentUpon>
+      <DependentUpon>drwdata.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\drwdatabase.Designer.cs">
+    <Compile Include="Models\drwdata.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>drwdatabase.edmx</DependentUpon>
+      <DependentUpon>drwdata.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Equipment.cs">
-      <DependentUpon>drwdatabase.tt</DependentUpon>
+      <DependentUpon>drwdata.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Heading.cs">
-      <DependentUpon>drwdatabase.tt</DependentUpon>
+      <DependentUpon>drwdata.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\lefargeEntities.cs" />
     <Compile Include="admin\plant.aspx.cs">
@@ -355,22 +355,22 @@
       <DependentUpon>Lefarge.Master</DependentUpon>
     </Compile>
     <Compile Include="Models\Picture.cs">
-      <DependentUpon>drwdatabase.tt</DependentUpon>
+      <DependentUpon>drwdata.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Plant.cs">
-      <DependentUpon>drwdatabase.tt</DependentUpon>
+      <DependentUpon>drwdata.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Potential_Action_Plans.cs">
-      <DependentUpon>drwdatabase.tt</DependentUpon>
+      <DependentUpon>drwdata.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Potential_Deficiencies.cs">
-      <DependentUpon>drwdatabase.tt</DependentUpon>
+      <DependentUpon>drwdata.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Question.cs">
-      <DependentUpon>drwdatabase.tt</DependentUpon>
+      <DependentUpon>drwdata.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Result.cs">
-      <DependentUpon>drwdatabase.tt</DependentUpon>
+      <DependentUpon>drwdata.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="admin\question.aspx.cs">

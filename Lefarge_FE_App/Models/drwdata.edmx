@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="drwSurvey_dbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="drwdataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="__MigrationHistory">
           <Key>
             <PropertyRef Name="MigrationId" />
@@ -306,7 +306,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="drwSurvey_dbModelStoreContainer">
+        <EntityContainer Name="drwdataModelStoreContainer">
           <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Action_Plan" EntityType="Self.Action_Plan" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
@@ -369,7 +369,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="drwSurvey_dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="drwdataModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="C__MigrationHistory">
           <Key>
             <PropertyRef Name="MigrationId" />
@@ -716,9 +716,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="drwSurvey_dbModelStoreContainer" CdmEntityContainer="DefaultConnectionEF">
+        <EntityContainerMapping StorageEntityContainer="drwdataModelStoreContainer" CdmEntityContainer="DefaultConnectionEF">
           <EntitySetMapping Name="C__MigrationHistory">
-            <EntityTypeMapping TypeName="drwSurvey_dbModel.C__MigrationHistory">
+            <EntityTypeMapping TypeName="drwdataModel.C__MigrationHistory">
               <MappingFragment StoreEntitySet="__MigrationHistory">
                 <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
                 <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
@@ -728,7 +728,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Action_Plan">
-            <EntityTypeMapping TypeName="drwSurvey_dbModel.Action_Plan">
+            <EntityTypeMapping TypeName="drwdataModel.Action_Plan">
               <MappingFragment StoreEntitySet="Action_Plan">
                 <ScalarProperty Name="Action_Plan_ID" ColumnName="Action_Plan_ID" />
                 <ScalarProperty Name="Action_Plan1" ColumnName="Action_Plan" />
@@ -736,7 +736,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="AspNetRoles">
-            <EntityTypeMapping TypeName="drwSurvey_dbModel.AspNetRole">
+            <EntityTypeMapping TypeName="drwdataModel.AspNetRole">
               <MappingFragment StoreEntitySet="AspNetRoles">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -744,7 +744,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="AspNetUserClaims">
-            <EntityTypeMapping TypeName="drwSurvey_dbModel.AspNetUserClaim">
+            <EntityTypeMapping TypeName="drwdataModel.AspNetUserClaim">
               <MappingFragment StoreEntitySet="AspNetUserClaims">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
@@ -754,7 +754,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="AspNetUserLogins">
-            <EntityTypeMapping TypeName="drwSurvey_dbModel.AspNetUserLogin">
+            <EntityTypeMapping TypeName="drwdataModel.AspNetUserLogin">
               <MappingFragment StoreEntitySet="AspNetUserLogins">
                 <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
                 <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
@@ -763,7 +763,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="AspNetUsers">
-            <EntityTypeMapping TypeName="drwSurvey_dbModel.AspNetUser">
+            <EntityTypeMapping TypeName="drwdataModel.AspNetUser">
               <MappingFragment StoreEntitySet="AspNetUsers">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
@@ -781,7 +781,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Categories">
-            <EntityTypeMapping TypeName="drwSurvey_dbModel.Category">
+            <EntityTypeMapping TypeName="drwdataModel.Category">
               <MappingFragment StoreEntitySet="Categories">
                 <ScalarProperty Name="Category_ID" ColumnName="Category_ID" />
                 <ScalarProperty Name="Category1" ColumnName="Category" />
@@ -789,7 +789,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Deficiencies">
-            <EntityTypeMapping TypeName="drwSurvey_dbModel.Deficiency">
+            <EntityTypeMapping TypeName="drwdataModel.Deficiency">
               <MappingFragment StoreEntitySet="Deficiencies">
                 <ScalarProperty Name="Deficiencies_ID" ColumnName="Deficiencies_ID" />
                 <ScalarProperty Name="Deficiency1" ColumnName="Deficiency" />
@@ -797,7 +797,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Equipments">
-            <EntityTypeMapping TypeName="drwSurvey_dbModel.Equipment">
+            <EntityTypeMapping TypeName="drwdataModel.Equipment">
               <MappingFragment StoreEntitySet="Equipment">
                 <ScalarProperty Name="Equipment_ID" ColumnName="Equipment_ID" />
                 <ScalarProperty Name="Unit_Number" ColumnName="Unit_Number" />
@@ -811,7 +811,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Headings">
-            <EntityTypeMapping TypeName="drwSurvey_dbModel.Heading">
+            <EntityTypeMapping TypeName="drwdataModel.Heading">
               <MappingFragment StoreEntitySet="Headings">
                 <ScalarProperty Name="Heading_ID" ColumnName="Heading_ID" />
                 <ScalarProperty Name="Heading1" ColumnName="Heading" />
@@ -821,7 +821,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Pictures">
-            <EntityTypeMapping TypeName="drwSurvey_dbModel.Picture">
+            <EntityTypeMapping TypeName="drwdataModel.Picture">
               <MappingFragment StoreEntitySet="Pictures">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="URL" ColumnName="URL" />
@@ -832,7 +832,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Plants">
-            <EntityTypeMapping TypeName="drwSurvey_dbModel.Plant">
+            <EntityTypeMapping TypeName="drwdataModel.Plant">
               <MappingFragment StoreEntitySet="Plants">
                 <ScalarProperty Name="Plant_ID" ColumnName="Plant_ID" />
                 <ScalarProperty Name="Plant_Name" ColumnName="Plant_Name" />
@@ -844,7 +844,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Potential_Action_Plans">
-            <EntityTypeMapping TypeName="drwSurvey_dbModel.Potential_Action_Plans">
+            <EntityTypeMapping TypeName="drwdataModel.Potential_Action_Plans">
               <MappingFragment StoreEntitySet="Potential_Action_Plans">
                 <ScalarProperty Name="Potential_Action_Plans_ID" ColumnName="Potential_Action_Plans_ID" />
                 <ScalarProperty Name="Potential_Action_Plan" ColumnName="Potential_Action_Plan" />
@@ -853,7 +853,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Potential_Deficiencies">
-            <EntityTypeMapping TypeName="drwSurvey_dbModel.Potential_Deficiencies">
+            <EntityTypeMapping TypeName="drwdataModel.Potential_Deficiencies">
               <MappingFragment StoreEntitySet="Potential_Deficiencies">
                 <ScalarProperty Name="Deficiencies_ID" ColumnName="Deficiencies_ID" />
                 <ScalarProperty Name="Deficiencies" ColumnName="Deficiencies" />
@@ -862,7 +862,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Questions">
-            <EntityTypeMapping TypeName="drwSurvey_dbModel.Question">
+            <EntityTypeMapping TypeName="drwdataModel.Question">
               <MappingFragment StoreEntitySet="Questions">
                 <ScalarProperty Name="Question_ID" ColumnName="Question_ID" />
                 <ScalarProperty Name="Question1" ColumnName="Question" />
@@ -872,7 +872,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Results">
-            <EntityTypeMapping TypeName="drwSurvey_dbModel.Result">
+            <EntityTypeMapping TypeName="drwdataModel.Result">
               <MappingFragment StoreEntitySet="Results">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Response" ColumnName="Response" />
@@ -885,7 +885,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <AssociationSetMapping Name="AspNetUserRoles" TypeName="drwSurvey_dbModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+          <AssociationSetMapping Name="AspNetUserRoles" TypeName="drwdataModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
             <EndProperty Name="AspNetRoles">
               <ScalarProperty Name="Id" ColumnName="RoleId" />
             </EndProperty>
